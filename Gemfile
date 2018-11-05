@@ -12,6 +12,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use Haml as as markup language
 gem 'haml-rails', '~> 1.0.0'
+# Use bootstrap library
+gem 'bootstrap', '~> 4.1.3'
+# Use chosen library for select boxes
+gem 'chosen-rails'
+# Use font awesome
+gem 'font-awesome-rails'
 # Use devise for user authentication
 gem 'devise', '~> 4.5.0'
 # Use devise invitable for user invitations
