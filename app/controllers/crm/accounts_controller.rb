@@ -2,7 +2,7 @@ class Crm::AccountsController < ApplicationController
   before_action :set_account, only:[:edit, :show, :update, :destroy]
 
   def home
-    @accounts = Crm::Account.all
+    @accounts = Crm::Account.recent
   end
 
   def index
