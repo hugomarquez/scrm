@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def navbar_type
-    @nav_type.nil? ? 'navbar-static-top' : @nav_type
+    @nav_type.nil? ? 'sticky-top' : @nav_type
   end
 
   def show_layout_flash?
