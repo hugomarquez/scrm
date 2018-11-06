@@ -1,0 +1,17 @@
+!!! 5
+%html{lang: I18n.locale}
+  %head
+    %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
+    %meta{content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+    %meta{content: 'NONE, NOARCHIVE', name: 'robots'}
+    %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0', name: 'viewport'}
+    = csrf_meta_tag
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = yield :stylesheets
+
+    %body
+      - if show_navbar?
+        = render "layouts/navbar"
+      = yield
+    = yield :javascripts
