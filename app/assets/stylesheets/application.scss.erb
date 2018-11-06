@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
-<% theme = 'flat' %>
-
-@import "themes/<%= theme %>/theme";
+<% theme = 'default' %>
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /***  Libraries  ***/
 @import "font-awesome";
+@import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
+@import "chosen";
 
 /***  Theming  ***/
 @import "themes/<%= theme %>/theme";

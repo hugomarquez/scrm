@@ -16,6 +16,7 @@ gem 'haml-rails', '~> 1.0.0'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
+gem 'jquery-datatables-rails'
 # Use chosen library for select boxes
 gem 'chosen-rails'
 # Use font awesome
@@ -36,6 +37,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'public_activity', '~> 1.6.2'
 # Use kaminari for pagination
 gem 'kaminari', '~> 1.1.1'
+gem 'breadcrumbs_on_rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
