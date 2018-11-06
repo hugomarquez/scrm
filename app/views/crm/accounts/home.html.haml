@@ -1,0 +1,39 @@
+.container
+  .col-md-12
+    .block-header
+      %h2= t('views.crm/accounts.home.title')
+    .row
+      .card
+        .card-header.bg-indigo
+          %h2= t('views.crm/accounts.home.actions.recently_viewed')
+          %ul.actions
+            %li.dropdown
+              %a{href:'#', data:{toggle:'dropdown'}}
+                %i.fa.fa-ellipsis-v
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to t('views.crm/accounts.home.actions.recently_viewed'), "#"
+                %li= link_to t('views.crm/accounts.home.actions.recently_created'), "#"
+          = link_to new_crm_account_path, class:'btn bg-red btn-float' do
+            %i.fa.fa-plus
+        .card-body
+          %table.table.table-condensed.table-striped.table-hover
+            %thead
+              %tr
+                %th= t('activerecord.attributes.crm/account.number')
+                %th= t('activerecord.attributes.crm/account.name')
+            %tbody
+              - @accounts.each do |a|
+                %tr
+                  %td= link_to a.number, crm_account_path(a)
+                  %td= link_to a.name, crm_account_path(a)
+    .row
+      .col-md-6
+        .card
+          .card-header
+            %h2 Reports
+          .card-body
+      .col-md-6
+        .card
+          .card-header
+            %h2 Tools
+          .card-body

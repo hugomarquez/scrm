@@ -1,5 +1,11 @@
 en:
   views:
+    crm/accounts:
+      home:
+        title: "Accounts"
+        actions:
+          recently_viewed: "Recently Viewed"
+          recently_created: "Recently Created"
     shared:
       save: "Save"
       cancel: "Cancel"
