@@ -23,7 +23,6 @@
                 %li= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete
           - else
             %li= link_to t('devise.sessions.sign_in'), new_user_session_path
-            %li= link_to t('devise.sessions.sign_up'), new_organization_path
           %li.dropdown
             %a.dropdown-toggle{href:'#', data:{toggle:'dropdown'}}
               Applications
