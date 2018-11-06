@@ -1,0 +1,40 @@
+.card
+  .card-header
+    %p.lead= @user.person.full_name
+    .card-actions
+      = link_to new_core_user_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+      = link_to edit_core_user_path(@user), class:'btn btn-default' do
+        %i.fa.fa-pencil
+      = link_to send_invite_core_user_path(@user), class:'btn btn-default' do
+        %i.fa.fa-plane
+  .card-block.table-responsive
+    %table.table.table-condensed.table-striped.table-hover
+      %tr
+        %th=t('activerecord.attributes.core/person.full_name')
+        %td= @user.person.full_name
+        %th=t('activerecord.attributes.core/user.email')
+        %td= @user.email
+      %tr
+        %th=t('activerecord.attributes.core/user.department')
+        %td= @user.department
+        %th=t('activerecord.attributes.core/user.company')
+        %td= @user.company
+      %tr
+        %th=t('activerecord.attributes.core/user.start_of_day')
+        %td= @user.start_of_day
+        %th=t('activerecord.attributes.core/user.end_of_day')
+        %td= @user.end_of_day
+      %tr
+        %th=t('activerecord.attributes.core/user.username')
+        %td= @user.username
+      %tr
+        %th=t('activerecord.attributes.core/person.phone')
+        %td= @user.person.phone
+        %th=t('activerecord.attributes.core/person.extension')
+        %td= @user.person.extension
+      %tr
+        %th=t('activerecord.attributes.core/person.mobile')
+        %td= @user.person.mobile
+        %th=t('activerecord.attributes.core/person.birthdate')
+        %td= @user.person.birthdate

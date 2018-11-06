@@ -17,12 +17,28 @@ module ApplicationHelper
     @navbar = opts.fetch(:navbar){true}
   end
 
+  def sidebar(opts={})
+    @sidebar = opts.fetch(:sidebar){true}
+  end
+
+  def breadcrumbs(opts={})
+    @breadcrumbs = opts.fetch(:breadcrumbs){true}
+  end
+
   def show_navbar?
     @navbar.nil? ? true : @navbar
   end
 
+  def show_sidebar?
+    @sidebar.nil? ? true : @sidebar
+  end
+
+  def show_breadcrumbs?
+    @breadcrumbs.nil? ? true : @breadcrumbs
+  end
+
   def navbar_type
-    @nav_type.nil? ? 'sticky-top' : @nav_type
+    @nav_type.nil? ? 'navbar-fixed-top' : @nav_type
   end
 
   def show_layout_flash?

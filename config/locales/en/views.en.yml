@@ -1,11 +1,23 @@
 en:
   views:
+    core/users:
+      index:
+        title: "Users"
+      edit:
+        title: "Edit User"
+      new:
+        title: "New User"
     crm/accounts:
       home:
         title: "Accounts"
         actions:
           recently_viewed: "Recently Viewed"
           recently_created: "Recently Created"
+      form:
+        title: "New Account"
+    sidebar:
+      nav:
+        users: "Users"
     shared:
       save: "Save"
       cancel: "Cancel"

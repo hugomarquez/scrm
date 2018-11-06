@@ -1,0 +1,58 @@
+= form_for @user, html:{class:'form-horizontal'} do |f|
+  .row
+    = f.fields_for :person, (f.object.build_person if f.object.person.nil?) do |p|
+      .col-sm-6
+        = form_group_for p, :first_name do
+          .col-sm-8
+            = p.text_field :first_name, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :last_name do
+          .col-sm-8
+            = p.text_field :last_name, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :title do
+          .col-sm-8
+            = p.text_field :title, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :phone do
+          .col-sm-8
+            = p.text_field :phone, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :extension do
+          .col-sm-8
+            = p.text_field :extension, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :mobile do
+          .col-sm-8
+            = p.text_field :mobile, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :username do
+        .col-sm-8
+          = f.text_field :username, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :company do
+        .col-sm-8
+          = f.text_field :company, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :email do
+        .col-sm-8
+          = f.email_field :email, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :department do
+        .col-sm-8
+          = f.text_field :department, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :division do
+        .col-sm-8
+          = f.text_field :division, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :start_of_day do
+        .col-sm-8
+          = f.time_field :start_of_day, class: 'form-control'
+    .col-sm-6
+      = form_group_for f, :end_of_day do
+        .col-sm-8
+          = f.time_field :end_of_day, class: 'form-control'
+  .row.form-group.text-center
+    = f.submit t('views.shared.save'), class: 'btn btn-sm btn-primary'
+    = link_to t('views.shared.cancel'), :back, class: 'btn btn-sm btn-danger'

@@ -11,8 +11,16 @@ class Core::User < ApplicationRecord
 
   belongs_to :organization, class_name:'Core::Organization', inverse_of: :members, optional: true
 
+  enum role: [:user, :admin, :account_owner]
+
   validates :authentication_token, uniqueness: true
   before_save :ensure_authentication_token!
+
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 
   def ensure_authentication_token!
     if authentication_token.blank?

@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@admin_user = Core::User.new(email: 'admin@example.com', password: 'password', password_confirmation: 'password', confirmed_at: Time.now.utc, person_attributes: {first_name: 'Default', last_name: 'Admin'})
+@admin_user = Core::User.new(email: 'admin@example.com', password: 'password', password_confirmation: 'password', confirmed_at: Time.now.utc,role: :admin, person_attributes: {first_name: 'Default', last_name: 'Admin'})
 @admin_user.skip_confirmation!
 @admin_user.save

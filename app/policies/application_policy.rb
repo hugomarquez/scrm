@@ -7,15 +7,19 @@ class ApplicationPolicy
   end
 
   def index?
-    true
+    false
   end
 
   def show?
-    true
+    if require_owner?
+      owner? and can?(:read)
+    else
+      can?(:read)
+    end
   end
 
   def create?
-    true
+    can?(:create)
   end
 
   def new?
@@ -23,7 +27,7 @@ class ApplicationPolicy
   end
 
   def update?
-    true
+    can?(:update)
   end
 
   def edit?
@@ -31,7 +35,32 @@ class ApplicationPolicy
   end
 
   def destroy?
-    true
+    can?(:delete)
+  end
+
+  def role
+    user.role.to_sym
+  end
+
+  def can?(action)
+    return false if user.role == nil
+    return true if role == :admin
+  end
+
+  def require_owner?
+    return false if user.role == nil
+  end
+
+  def owner?
+    if record.respond_to?(:created_by)
+      record.created_by == user
+    else
+      false
+    end
+  end
+
+  def scope
+    Pundit.policy_scope!(user, record.class)
   end
 
   class Scope
@@ -43,7 +72,7 @@ class ApplicationPolicy
     end
 
     def resolve
-      scope.all
+      scope
     end
-  end
+  end # end class Scope
 end

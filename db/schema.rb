@@ -80,7 +80,8 @@ ActiveRecord::Schema.define(version: 2018_11_06_031650) do
   create_table "core_users", force: :cascade do |t|
     t.string "slug"
     t.integer "organization_id"
-    t.integer "role_id"
+    t.integer "role", default: 0, null: false
+    t.boolean "can_export", default: false, null: false
     t.string "username"
     t.string "company"
     t.string "department"
@@ -120,7 +121,6 @@ ActiveRecord::Schema.define(version: 2018_11_06_031650) do
     t.index ["invited_by_type", "invited_by_id"], name: "index_core_users_on_invited_by_type_and_invited_by_id"
     t.index ["organization_id"], name: "index_core_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_core_users_on_reset_password_token", unique: true
-    t.index ["role_id"], name: "index_core_users_on_role_id"
   end
 
   create_table "crm_accounts", force: :cascade do |t|

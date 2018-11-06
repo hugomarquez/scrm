@@ -9,9 +9,14 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = yield :stylesheets
-
-    %body
+    %body{class:"default"}
       - if show_navbar?
-        = render "layouts/navbar"
-      = yield
+        %header.app-header
+          = render "layouts/navbar"
+      .app-body
+        - if show_sidebar?
+          = render 'layouts/sidebar'
+        %main
+          = yield
+    = flash_messages if show_layout_flash?
     = yield :javascripts

@@ -1,5 +1,5 @@
 module FormHelper
-
+  
   def errors_for(form, field)
     content_tag(:p, form.object.errors[field].try(:first), class: 'col-sm-offset-6 col-sm-6 help-block')
   end
@@ -8,7 +8,7 @@ module FormHelper
     label = opts.fetch(:label){true}
     has_errors = form.object.errors[field].present?
     content_tag :div, class: "form-group #{'has-error' if has_errors} #{'required' if required?(form, field)}" do
-      concat form.label(field, class: 'col-sm-3 control-label') if label
+      concat form.label(field, class: 'col-md-4 form-control-label') if label
       concat capture(&block)
       concat errors_for(form, field)
     end
@@ -25,14 +25,16 @@ module FormHelper
       .include?(ActiveRecord::Validations::PresenceValidator)
   end
 
-  def link_to_add_fields(name, f, association, opts={})
-    path = opts.fetch(:path){"core/shared/forms/"}
+  def link_to_add_fields(label, f, association, opts={})
+    path = opts.fetch(:path){''}
+    style = opts.fetch(:class){''}
+
     new_object = f.object.send(association).klass.new
     id = new_object.object_id
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
       render(path + association.to_s.singularize + "_fields", f: builder)
     end
-    link_to(name, 'javascript:void(0)', class: "btn btn-default col-sm-2 add_fields fa fa-plus pull-right", data: {id: id, fields: fields.gsub("\n", "")})
+    link_to(label, 'javascript:void(0)', class: "add_fields #{style}", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
   def options_for_t_enum(form, field)

@@ -1,0 +1,6 @@
+.sidebar
+  %ul.nav.nav-sidebar
+    %li{class: "#{controller.controller_name == 'users' ? 'active' : ''}"}
+      = link_to core_users_path do
+        %span.fa.fa-users
+        =t('views.sidebar.nav.users')

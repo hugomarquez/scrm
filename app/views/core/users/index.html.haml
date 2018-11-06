@@ -1,0 +1,14 @@
+-content_for :javascripts do
+  = javascript_include_tag 'lib/dataTables'
+.card
+  .card-header
+    %p.lead= t('views.core/users.index.title')
+    .card-actions
+      = link_to new_core_user_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    %table.table.table-striped.table-bordered.ajax-data-table{width:'100%', cellspacing:'0', data:{source: core_users_path(format: :json)}}
+      %thead
+        %tr
+          %th Email
+      %tbody

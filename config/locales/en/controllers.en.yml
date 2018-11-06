@@ -1,0 +1,12 @@
+en:
+  controllers:
+    application:
+      not_authorized: "You are not authorized to perform this action."
+    crm/accounts:
+    shared:
+      save: "Save"
+      cancel: "Cancel"
+      edit: "Edit"
+      delete: "Delete"
+      invite: "Invite"
+      delete_message: "Are you sure you want to delete this?"
