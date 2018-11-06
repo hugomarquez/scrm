@@ -1,0 +1,9 @@
+en:
+  views:
+    shared:
+      save: "Save"
+      cancel: "Cancel"
+      edit: "Edit"
+      delete: "Delete"
+      invite: "Invite"
+      delete_message: "Are you sure you want to delete this?"
