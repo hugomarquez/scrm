@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use Haml as as markup language
 gem 'haml-rails', '~> 1.0.0'
 # Use bootstrap library
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap-sass', '~> 3.3.7'
 # Use jquery for bootstrap
 gem 'jquery-rails'
 # Use chosen library for select boxes

@@ -1,0 +1,27 @@
+@import "variables";
+@import "colors";
+@import "cards";
+@import "devise";
+
+*, :active, :focus, :hover {
+  outline: 0!important;
+  -webkit-tap-highlight-color: transparent!important;
+}
+
+.block-header {
+  .col-md-2 {
+    padding-left: 0;
+  }
+  margin-bottom: 25px;
+  position: relative;
+  & > h2 {
+    font-size: 15px;
+    color: #777;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+.translation_missing {
+  color: $mat-red;
+  //background-color: $mat-red;
+}

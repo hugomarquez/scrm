@@ -1,0 +1,25 @@
+.devise-content
+  .devise-card
+    .devise-form
+      %h2= t('devise.sessions.sign_in')
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = form_group_for f, :email, label: false do
+          .input-group
+            = f.email_field :email, class: 'form-control input-lg', placeholder: t('activerecord.attributes.core/user.email'), required: true
+            %span.input-group-addon
+              %i.fa.fa-envelope
+        = form_group_for f, :password, label: false do
+          .input-group
+            = f.password_field :password, class: 'form-control input-lg', placeholder: t('activerecord.attributes.core/user.password'), required:true
+            %span.input-group-addon
+              %i.fa.fa-key
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .form-group
+          = f.submit t('devise.sessions.sign_in'), class: 'btn btn-success btn-block btn-lg'
+          %hr
+          = render "devise/shared/links"
+      = flash_messages layout_flash: false
+      - navbar navbar: false

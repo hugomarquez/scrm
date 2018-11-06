@@ -1,0 +1,28 @@
+.devise-content.registrations {
+  background-color: $mat-pink;
+}
+
+.devise-content.passwords {
+  background-color: $mat-indigo;
+}
+
+.devise-content {
+  min-height: 100vh;
+  text-align: center;
+  background-color: $mat-cyan;
+  .devise-card {
+    max-width: 500px;
+    padding: 120px 0;
+    width: 80%;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  .devise-form {
+    padding: 35px 45px 35px 25px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+    border-radius: 2px;
+  }
+}
