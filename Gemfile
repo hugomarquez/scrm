@@ -14,7 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails', '~> 1.0.0'
 # Use bootstrap library
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-datatables-rails'
 # Use chosen library for select boxes
