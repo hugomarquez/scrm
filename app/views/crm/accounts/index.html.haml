@@ -1,0 +1,16 @@
+-content_for :javascripts do
+  = javascript_include_tag 'lib/dataTables'
+
+.card
+  .card-header
+    %p.lead= t('views.crm/accounts.index.title')
+    .card-actions
+      = link_to new_crm_account_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    %table.table.table-striped.table-bordered.ajax-data-table{width:'100%', cellspacing:'0', data:{source: crm_accounts_path(format: :json)}}
+      %thead
+        %tr
+          %th=t('activerecord.attributes.crm/account.name')
+          %th=t('activerecord.attributes.crm/account.number')
+      %tbody

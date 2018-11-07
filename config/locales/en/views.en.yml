@@ -8,15 +8,23 @@ en:
       new:
         title: "New User"
     crm/accounts:
+      index:
+        title: "Accounts"
       home:
         title: "Accounts"
         actions:
           recently_viewed: "Recently Viewed"
           recently_created: "Recently Created"
+      new:
+        title: "New Account"
       form:
         title: "New Account"
     sidebar:
       nav:
+        accounts: "Accounts"
+        contacts: "Contacts"
+        leads: "Leads"
+        deals: "Deals"
         users: "Users"
     shared:
       save: "Save"

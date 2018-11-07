@@ -1,5 +1,22 @@
 .sidebar
   %ul.nav.nav-sidebar
+    %li{class: "#{controller.controller_name == 'accounts' ? 'active' : ''}"}
+      = link_to crm_accounts_path, id:'sAccounts' do
+        %span.fa.fa-building
+        = t('views.sidebar.nav.accounts')
+    %li{class: "#{controller.controller_name == 'contacts' ? 'active' : ''}"}
+      = link_to crm_contacts_path, id:'sContacts' do
+        %span.fa.fa-address-book
+        = t('views.sidebar.nav.contacts')
+    %li{class: "#{controller.controller_name == 'leads' ? 'active' : ''}"}
+      = link_to crm_leads_path, id:'sLeads' do
+        %span.fa.fa-flag
+        = t('views.sidebar.nav.leads')
+    %li{class: "#{controller.controller_name == 'deals' ? 'active' : ''}"}
+      = link_to crm_deals_path, id:'sDeals' do
+        %span.fa.fa-money
+        = t('views.sidebar.nav.deals')
+  %ul.nav.nav-sidebar
     %li{class: "#{controller.controller_name == 'users' ? 'active' : ''}"}
       = link_to core_users_path do
         %span.fa.fa-users

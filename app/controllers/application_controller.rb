@@ -8,7 +8,17 @@ class ApplicationController < ActionController::Base
   def pundit_user
     current_core_user
   end
+
+  def current_user
+    current_core_user
+  end
+
   private
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(resource_or_scope)
+    home_path
+  end
 
   def user_not_authorized
     flash[:alert] = t('controllers.application.not_authorized')

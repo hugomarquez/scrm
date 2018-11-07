@@ -6,7 +6,10 @@ class Crm::AccountsController < ApplicationController
   end
 
   def index
-    @accounts = Crm::Account.all
+    respond_to do |format|
+      format.html
+      format.json { render json: Crm::AccountDatatable.new(view_context) }
+    end
   end
 
   def new

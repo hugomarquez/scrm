@@ -1,9 +1,10 @@
 - navbar navbar: false
 - sidebar sidebar: false
-.devise-content
-  .devise-card
-    .devise-form
+.col-sm-8.col-sm-offset-1
+  .card
+    .card-header
       %h2= t('devise.sessions.sign_in')
+    .card-block
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = form_group_for f, :email, label: false do
           .input-group
@@ -24,4 +25,3 @@
           %hr
           = render "devise/shared/links"
       = flash_messages layout_flash: false
-      - navbar navbar: false

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
-
-  namespace :core do
+  namespace :core, path:'/' do
+    root to:'dashboard#index'
     devise_for :users, class_name:'Core::User', module: :devise, skip:[:registrations]
 
     resources :users, class_name:'Core::User', except:[:destroy] do
@@ -9,11 +8,25 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :crm, path: 'crm' do
+  namespace :crm, path: '/sales' do
     root to: 'dashboard#index'
 
     resources :accounts, class_name:'Crm::Account' do
       get 'home', on: :collection
     end
+
+    resources :contacts, class_name:'Crm::Contact' do
+      get 'home', on: :collection
+    end
+
+    resources :leads, class_name:'Crm::Lead' do
+      get 'home', on: :collection
+    end
+
+    resources :deals, class_name:'Crm::Deal' do
+      get 'home', on: :collection
+    end
   end
+
+  get 'home', to: 'home#index'
 end

@@ -1,0 +1,60 @@
+.card
+  .card-header
+    %p.lead= @account.name
+    .card-actions
+      = link_to new_crm_account_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+      = link_to edit_crm_account_path(@account), class:'btn btn-default' do
+        %i.fa.fa-pencil
+  .card-block
+    %table.table.table-condensed.table-striped
+      %tr
+        %th=t('activerecord.attributes.crm/account.name')
+        %td= @account.name
+        %th=t('activerecord.attributes.crm/account.number')
+        %td= @account.number
+      %tr
+        %th=t('activerecord.attributes.crm/account.email')
+        %td= @account.email
+        %th=t('activerecord.attributes.crm/account.website')
+        %td= @account.website
+      %tr
+        %th=t('activerecord.attributes.crm/account.phone')
+        %td= @account.phone
+        %th=t('activerecord.attributes.crm/account.extension')
+        %td= @account.extension
+      %tr
+        %th=t('activerecord.attributes.crm/account.industry')
+        %td= @account.industry
+        %th=t('activerecord.attributes.crm/account.ownership')
+        %td=t("activerecord.attributes.crm/account.ownerships_options.#{@account.ownership}")
+      %tr
+        %th=t('activerecord.attributes.crm/account.annual_revenue')
+        %td= @account.annual_revenue
+        %th=t('activerecord.attributes.crm/account.ticker_symbol')
+        %td= @account.ticker_symbol
+      %tr
+        %th=t('activerecord.attributes.crm/account.priority')
+        %td=t("activerecord.attributes.crm/account.priorities_options.#{@account.priority}")
+        %th=t('activerecord.attributes.crm/account.rating')
+        %td=t("activerecord.attributes.crm/account.ratings_options.#{@account.rating}")
+      %tr
+        %th=t('activerecord.attributes.crm/account.active')
+        %td= @account.active
+        %th=t('activerecord.attributes.crm/account.sic_code')
+        %td= @account.sic_code
+      %tr
+        %th=t('activerecord.attributes.crm/account.employees')
+        %td=t("activerecord.attributes.crm/account.employees_options.#{@account.employees}")
+        %th=t('activerecord.attributes.crm/account.locations')
+        %td= @account.locations
+      %tr
+        %th=t('activerecord.attributes.crm/lead.created_at')
+        %td= @account.created_at.strftime("%m/%d/%Y - %l:%M%p")
+        %th=t('activerecord.attributes.crm/lead.updated_at')
+        %td= @account.updated_at.strftime("%m/%d/%Y - %l:%M%p")
+      %tr
+        %th=t('activerecord.attributes.crm/account.created_by')
+        %td= @account.created_by.person.full_name
+        %th
+        %td
