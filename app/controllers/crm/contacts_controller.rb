@@ -36,7 +36,7 @@ class Crm::ContactsController < ApplicationController
 
     if @contact.valid?
       @contact.save
-      redirect_to crm.contact_path(@contact)
+      redirect_to crm_contact_path(@contact)
     else
       render :new
     end
@@ -56,7 +56,7 @@ class Crm::ContactsController < ApplicationController
 
     if @contact.valid?
       @contact.save
-      redirect_to crm.contact_path(@contact)
+      redirect_to crm_contact_path(@contact)
     else
       render :edit
     end
@@ -65,7 +65,7 @@ class Crm::ContactsController < ApplicationController
   def destroy
     authorize @contact
     @contact.destroy
-    redirect_to crm.home_contacts_path
+    redirect_to crm_home_contacts_path
   end
 
   private

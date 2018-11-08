@@ -1,0 +1,16 @@
+= form_for @contact, html:{class:'form-horizontal'} do |f|
+  .card-block
+    .row
+      = f.fields_for :person do |person|
+        = render 'core/shared/personable_fields', f: person
+      .col-sm-6
+        = form_group_for f, :language do
+          .col-sm-8
+            = f.text_field :language, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :description do
+          .col-sm-8
+            = f.text_area :description, class: 'form-control'
+    .row.form-group.text-center
+      = f.submit t('views.shared.save'), class: 'btn btn-sm btn-primary'
+      = link_to t('views.shared.cancel'), :back, class: 'btn btn-sm btn-danger'

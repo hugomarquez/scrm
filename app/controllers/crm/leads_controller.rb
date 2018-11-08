@@ -10,7 +10,7 @@ class Crm::LeadsController < ApplicationController
     @new_lead = @lead.clone_with_associations
     if @new_lead.valid?
       @new_lead.save
-      redirect_to crm.lead_path(@new_lead)
+      redirect_to crm_lead_path(@new_lead)
     else
       render :new
     end
@@ -67,7 +67,7 @@ class Crm::LeadsController < ApplicationController
     authorize @lead
     if @lead.valid?
       @lead.save
-      redirect_to crm.leads_path
+      redirect_to crm_leads_path
     else
       render :new
     end
@@ -76,7 +76,7 @@ class Crm::LeadsController < ApplicationController
   def update
     authorize @lead
     if @lead.update_attributes(lead_params)
-      redirect_to crm.lead_path(@lead)
+      redirect_to crm_lead_path(@lead)
     else
       render :edit
     end
@@ -85,7 +85,7 @@ class Crm::LeadsController < ApplicationController
   def destroy
     authorize @lead
     @lead.destroy
-    redirect_to crm.home_leads_path
+    redirect_to crm_home_leads_path
   end
 
   private

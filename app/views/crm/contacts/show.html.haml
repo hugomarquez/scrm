@@ -1,0 +1,45 @@
+.card
+  .card-header
+    %p.lead= @contact.person.first_name if @contact.person
+    .card-actions
+      = link_to new_crm_contact_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+      = link_to edit_crm_contact_path(@contact), class:'btn btn-default' do
+        %i.fa.fa-pencil
+  .card-block
+    %table.table.table-condensed.table-striped
+      %tr
+        %th=t('activerecord.attributes.core/person.full_name')
+        %td= @contact.person.full_name
+        %th=t('activerecord.attributes.crm/contact.account')
+        %td= link_to @contact.account.name, @contact.account if @contact.account
+      %tr
+        %th=t('activerecord.attributes.core/person.phone')
+        %td= @contact.person.phone
+        %th=t('activerecord.attributes.core/person.extension')
+        %td= @contact.person.extension
+      %tr
+        %th=t('activerecord.attributes.core/person.mobile')
+        %td= @contact.person.mobile
+        %th=t('activerecord.attributes.core/person.email')
+        %td= @contact.person.email
+      %tr
+        %th=t('activerecord.attributes.crm/contact.language')
+        %td= @contact.language
+        %td
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/contact.created_at')
+        %td= l(@contact.created_at, format: :short)
+        %th=t('activerecord.attributes.crm/contact.updated_at')
+        %td= l(@contact.updated_at, format: :short)
+      %tr
+        %th=t('activerecord.attributes.crm/contact.created_by')
+        %td= @contact.created_by.person.full_name
+        %th
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/contact.description')
+        %td= @contact.description
+        %td
+        %td

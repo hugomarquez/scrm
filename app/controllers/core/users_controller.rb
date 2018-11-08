@@ -20,12 +20,12 @@ class Core::UsersController < ApplicationController
 
   def show
     authorize @user
-    redirect_to core.edit_user_path(@user) if @user.person == nil
+    redirect_to core_edit_user_path(@user) if @user.person == nil
   end
 
   def send_invite
     @user.invite!(current_core_user)
-    redirect_to core.user_path(@user)
+    redirect_to core_user_path(@user)
   end
 
   def create
@@ -38,7 +38,7 @@ class Core::UsersController < ApplicationController
       @user.skip_confirmation!
       @user.skip_invitation= true
       @user.save
-      redirect_to core.user_path(@user)
+      redirect_to core_user_path(@user)
     else
       render :new
     end
@@ -47,7 +47,7 @@ class Core::UsersController < ApplicationController
   def update
     authorize @user
     if @user.update_attributes(user_params)
-      redirect_to core.user_path(@user)
+      redirect_to core_user_path(@user)
     else
       render :edit
     end
@@ -59,7 +59,7 @@ class Core::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(
+    params.require(:core_user).permit(
       :organization, :username, :nickname, :company,
       :department, :division, :start_of_day, :end_of_day,
       :email, :password, :role_id,

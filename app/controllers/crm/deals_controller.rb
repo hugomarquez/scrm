@@ -32,7 +32,7 @@ class Crm::DealsController < ApplicationController
 
     if @deal.valid?
       @deal.save
-      redirect_to crm.deal_path(@deal)
+      redirect_to crm_deal_path(@deal)
     else
       render :new
     end
@@ -52,7 +52,7 @@ class Crm::DealsController < ApplicationController
 
     if @deal.valid?
       @deal.save
-      redirect_to crm.deal_path(@deal)
+      redirect_to crm_deal_path(@deal)
     else
       render :edit
     end
@@ -61,7 +61,7 @@ class Crm::DealsController < ApplicationController
   def destroy
     authorize @deal
     @deal.destroy
-    redirect_to crm.home_deals_path
+    redirect_to crm_deals_path
   end
 
   private
