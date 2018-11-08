@@ -19,6 +19,18 @@ en:
         title: "New Account"
       form:
         title: "New Account"
+    crm/contacts:
+      index:
+        title: "Contacts"
+      home:
+        title: "Contacts"
+        actions:
+          recently_viewed: "Recently Viewed"
+          recently_created: "Recently Created"
+      new:
+        title: "New Contact"
+      form:
+        title: "New Contact"
     sidebar:
       nav:
         accounts: "Accounts"

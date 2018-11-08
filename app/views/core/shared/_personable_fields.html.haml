@@ -1,0 +1,45 @@
+.row
+  .col-sm-6
+    = form_group_for f, :first_name do
+      .col-sm-8
+        = f.text_field :first_name, class: 'form-control'
+  .col-sm-6
+    = form_group_for f, :last_name do
+      .col-sm-8
+        = f.text_field :last_name, class: 'form-control'
+.row
+  .col-sm-6
+    = form_group_for f, :title do
+      .col-sm-8
+        = f.text_field :title, class: 'form-control'
+  .col-sm-6
+    = form_group_for f, :mobile do
+      .col-sm-8
+        = f.text_field :mobile, class: 'form-control'
+.row
+  .col-sm-6
+    = form_group_for f, :phone do
+      .col-sm-8
+        = f.text_field :phone, class: 'form-control'
+  .col-sm-6
+    = form_group_for f, :extension do
+      .col-sm-8
+        = f.text_field :extension, class: 'form-control'
+.row
+  .col-sm-6
+    = form_group_for f, :assistant do
+      .col-sm-8
+        = f.text_field :assistant, class: 'form-control'
+  .col-sm-6
+    = form_group_for f, :asst_phone do
+      .col-sm-8
+        = f.text_field :asst_phone, class: 'form-control'
+.row
+  .col-sm-6
+    = form_group_for f, :email do
+      .col-sm-8
+        = f.email_field :email, class: 'form-control'
+  .col-sm-6
+    = form_group_for f, :birthdate do
+      .col-sm-8
+        = f.date_field :birthdate, class: 'form-control'

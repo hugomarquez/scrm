@@ -1,7 +1,8 @@
 class Core::UserPolicy < ApplicationPolicy
 
   def show?
-    super or (require_owner? and user_is_record?)
+    false
+    #super or (require_owner? and user_is_record?)
   end
 
   def user_is_record?

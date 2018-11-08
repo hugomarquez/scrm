@@ -102,8 +102,19 @@ en:
         created_at: "Created at"
         updated_at: "updated_at"
       crm/contact:
+        number: "Number"
         lead_source: "Lead Source"
+        lead_sources_options:
+          web: "Web"
+          phone: "Phone"
+          referral: "Referral"
+          purchased_list: "Purchased List"
+          other: "Other"
         level: "Level"
+        levels_options:
+          primary: "Primary"
+          secondary: "Secondary"
+          tertiary: "Tertiary"
         language: "Language"
         description: "Description"
         account: "Account"

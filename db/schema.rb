@@ -169,6 +169,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
 
   create_table "crm_contacts", force: :cascade do |t|
     t.string "slug"
+    t.string "number"
     t.integer "lead_source"
     t.integer "level"
     t.string "language"

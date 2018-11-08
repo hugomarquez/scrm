@@ -6,6 +6,10 @@ class Crm::ContactsController < ApplicationController
   end
 
   def index
+    respond_to do |format|
+      format.html
+      format.json { render json: Crm::ContactDatatable.new(view_context) }
+    end
   end
 
   def new
@@ -36,6 +40,7 @@ class Crm::ContactsController < ApplicationController
 
     if @contact.valid?
       @contact.save
+      flash[:success] = t('controllers.crm/contacts.create.success')
       redirect_to crm_contact_path(@contact)
     else
       render :new
@@ -56,6 +61,7 @@ class Crm::ContactsController < ApplicationController
 
     if @contact.valid?
       @contact.save
+      flash[:success] = t('controllers.crm/contacts.update.success')
       redirect_to crm_contact_path(@contact)
     else
       render :edit
@@ -75,8 +81,9 @@ class Crm::ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(
-      :language, :description, :created_by_id, :account_label, :account_id,
+    params.require(:crm_contact).permit(
+      :number, :language, :description, :created_by_id, :account_label, :account_id,
+      :lead_source, :level,
       person_attributes:
         [:_destroy, :id, :title, :first_name, :last_name, :phone, :home_phone,
           :other_phone, :email, :assistant, :asst_phone, :extension, :mobile,

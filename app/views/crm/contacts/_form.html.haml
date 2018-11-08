@@ -1,8 +1,26 @@
 = form_for @contact, html:{class:'form-horizontal'} do |f|
   .card-block
     .row
-      = f.fields_for :person do |person|
-        = render 'core/shared/personable_fields', f: person
+      .col-sm-6
+        = form_group_for f, :account do
+          .col-sm-8
+            = f.text_field :account, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :number do
+          .col-sm-8
+            = f.text_field :number, class: 'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :level do
+          .col-sm-8
+            = options_for_t_enum(f, :level)
+      .col-sm-6
+        = form_group_for f, :lead_source do
+          .col-sm-8
+            = options_for_t_enum(f, :lead_source)
+    = f.fields_for :person do |person|
+      = render 'core/shared/personable_fields', f: person
+    .row
       .col-sm-6
         = form_group_for f, :language do
           .col-sm-8

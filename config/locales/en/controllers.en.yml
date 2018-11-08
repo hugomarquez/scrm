@@ -3,6 +3,15 @@ en:
     application:
       not_authorized: "You are not authorized to perform this action."
     crm/accounts:
+      create:
+        success: "Account created successfully!"
+      update:
+        success: "Account updated successfully!"
+    crm/contacts:
+      create:
+        success: "Contact created successfully!"
+      update:
+        success: "Contact updated successfully!"
     shared:
       save: "Save"
       cancel: "Cancel"

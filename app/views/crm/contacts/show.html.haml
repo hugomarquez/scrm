@@ -9,10 +9,20 @@
   .card-block
     %table.table.table-condensed.table-striped
       %tr
-        %th=t('activerecord.attributes.core/person.full_name')
-        %td= @contact.person.full_name
         %th=t('activerecord.attributes.crm/contact.account')
-        %td= link_to @contact.account.name, @contact.account if @contact.account
+        %td= @contact.account
+        %th=t('activerecord.attributes.crm/contact.number')
+        %td= @contact.number
+      %tr
+        %th=t('activerecord.attributes.crm/contact.level')
+        %td= @contact.level
+        %th=t('activerecord.attributes.crm/contact.lead_source')
+        %td= @contact.lead_source
+      %tr
+        %th=t('activerecord.attributes.core/person.first_name')
+        %td= @contact.person.first_name
+        %th=t('activerecord.attributes.core/person.last_name')
+        %td= @contact.person.last_name
       %tr
         %th=t('activerecord.attributes.core/person.phone')
         %td= @contact.person.phone
@@ -24,10 +34,15 @@
         %th=t('activerecord.attributes.core/person.email')
         %td= @contact.person.email
       %tr
+        %th=t('activerecord.attributes.core/person.assistant')
+        %td= @contact.person.assistant
+        %th=t('activerecord.attributes.core/person.asst_phone')
+        %td= @contact.person.asst_phone
+      %tr
         %th=t('activerecord.attributes.crm/contact.language')
         %td= @contact.language
-        %td
-        %td
+        %th=t('activerecord.attributes.crm/contact.description')
+        %td= @contact.description
       %tr
         %th=t('activerecord.attributes.crm/contact.created_at')
         %td= l(@contact.created_at, format: :short)
@@ -37,9 +52,4 @@
         %th=t('activerecord.attributes.crm/contact.created_by')
         %td= @contact.created_by.person.full_name
         %th
-        %td
-      %tr
-        %th=t('activerecord.attributes.crm/contact.description')
-        %td= @contact.description
-        %td
         %td

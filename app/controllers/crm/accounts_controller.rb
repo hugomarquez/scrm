@@ -31,6 +31,7 @@ class Crm::AccountsController < ApplicationController
     authorize @account
     if @account.valid?
       @account.save
+      flash[:success] = t('controllers.crm/accounts.create.success')
       redirect_to crm_accounts_path
     else
       render :new
@@ -40,6 +41,7 @@ class Crm::AccountsController < ApplicationController
   def update
     authorize @account
     if @account.update(account_params)
+      flash[:success] = t('controllers.crm/accounts.update.success')
       redirect_to crm_account_path(@account)
     else
       render :edit
