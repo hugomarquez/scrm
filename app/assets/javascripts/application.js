@@ -17,4 +17,12 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require chosen-jquery
+//= require lib/sweetalert2.min.js
+//= require core/flash.js
 //= require lib/pace.min.js
+
+$(document).ready(function(){
+  // Initialize flash msgs
+  Flash.searchFlash();
+
+});
