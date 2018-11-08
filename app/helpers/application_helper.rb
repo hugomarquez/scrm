@@ -2,13 +2,15 @@ module ApplicationHelper
 
   def flash_messages(opts={})
     @layout_flash = opts.fetch(:layout_flash){true}
-    capture do
-      flash.each do |name, msg|
-        concat (
-          content_tag :div, id:"flash", data:{type:"#{name}", message:"#{msg}"}, class: 'hidden' do
-            content_tag :p, "loading flash"
-          end
-        )
+    if @layout_flash
+      capture do
+        flash.each do |name, msg|
+          concat (
+            content_tag :div, id:"flash", data:{type:"#{name}", message:"#{msg}"}, class: 'hidden' do
+              content_tag :p, "loading flash"
+            end
+          )
+        end
       end
     end
   end
