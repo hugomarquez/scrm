@@ -16,13 +16,14 @@
 //= require bootstrap-sprockets
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require chosen-jquery
 //= require lib/mousetrap/mousetrap.js
 //= require lib/mousetrap/mousetrap-bind-dictionary.min.js
-//= require chosen-jquery
 //= require lib/sweetalert2.min.js
 //= require lib/pace.min.js
 //= require lib/chart.min.js
-//= require core/flash.js
+//= require lib/flash.js
+//= require lib/i18n.js
 
 $(document).ready(function(){
   // Initialize flash msgs

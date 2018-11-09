@@ -10,7 +10,7 @@ class Crm::Deal < ApplicationRecord
   before_destroy :remove_activity
 
   belongs_to :created_by, class_name:'Core::User'
-  belongs_to :account, class_name:'Crm::Account'
+  belongs_to :account, class_name:'Crm::Account', optional: true
 
   before_save :set_probability
   validates_presence_of :name, :number, :close_at

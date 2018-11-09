@@ -25,6 +25,7 @@ class Crm::DealsController < ApplicationController
     @deal = Crm::Deal.new(deal_params)
     @deal.created_by = current_core_user
     authorize @deal
+    byebug
     if @deal.valid?
       @deal.save
       flash[:success] = t('controllers.crm/deals.create.success')
@@ -59,11 +60,11 @@ class Crm::DealsController < ApplicationController
   end
 
   def deal_params
-    params[:deal].permit(
+    params[:crm_deal].permit(
       :account_label, :account_id,
       :name, :category, :lead_source ,:tracking_number, :description,
       :amount, :expected_revenue, :close_at, :next_step, :stage,
-      :main_competitor, :delivery_status
+      :main_competitor, :delivery_status, :number, :probability
     )
   end
 end
