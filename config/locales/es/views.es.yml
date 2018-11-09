@@ -1,5 +1,25 @@
-en:
+es:
   views:
+    core/keyboard_help:
+      title: "Atajos de Teclado"
+      section:
+        global:
+          title: "Navegación Global"
+          dashboard: "Ir al panel de control"
+          accounts: "Ir a cuentas"
+          contacts: "Ir a contactos"
+          deals: "Ir a oportunidades"
+          leads: "Ir a prospectos"
+          users: "Ir a usuarios"
+        actions:
+          title: "Acciones"
+          accounts: "Crear una nueva cuenta"
+          contacts: "Crear nuevo contacto"
+          deals: "Crear una nueva oportunidad"
+          leads: "Crear nuevo prospecto"
+        special:
+          title: "Teclas Especiales"
+          show: "Mostrar / Ocultar hoja de atajos"
     core/users:
       index:
         title: "Usuarios"
@@ -12,9 +32,6 @@ en:
         title: "Cuentas"
       home:
         title: "Cuentas"
-        actions:
-          recently_viewed: "Recientemente Visto"
-          recently_created: "Recientemente Creado"
       new:
         title: "Nueva Cuenta"
       form:
@@ -24,19 +41,26 @@ en:
         title: "Contactos"
       home:
         title: "Contactos"
-        actions:
-          recently_viewed: "Recientemente Visto"
-          recently_created: "Recientemente Creado"
       new:
         title: "Nuevo Contacto"
       form:
         title: "Nuevo Contacto"
+    crm/leads:
+      index:
+        title: "Prospectos"
+      home:
+        title: "Prospectos"
+      new:
+        title: "Nuevo Prospecto"
+      form:
+        title: "Nuevo Prospecto"
     sidebar:
       nav:
         accounts: "Cuentas"
         contacts: "Contactos"
-        leads: "Pistas"
-        deals: "Tratos"
+        dashboard: "Panel de Control"
+        leads: "Prospectos"
+        deals: "Oportunidades"
         users: "Usuarios"
     shared:
       save: "Guardar"
@@ -44,4 +68,7 @@ en:
       edit: "Editar"
       delete: "Eliminar"
       invite: "Invitar"
+      actions:
+        recently_viewed: "Recientemente Visto"
+        recently_created: "Recientemente Creado"
       delete_message: "¿Está seguro que quiere eliminar esto?"

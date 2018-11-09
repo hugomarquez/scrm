@@ -32,9 +32,6 @@ en:
         title: "Accounts"
       home:
         title: "Accounts"
-        actions:
-          recently_viewed: "Recently Viewed"
-          recently_created: "Recently Created"
       new:
         title: "New Account"
       form:
@@ -44,9 +41,6 @@ en:
         title: "Contacts"
       home:
         title: "Contacts"
-        actions:
-          recently_viewed: "Recently Viewed"
-          recently_created: "Recently Created"
       new:
         title: "New Contact"
       form:
@@ -56,9 +50,6 @@ en:
         title: "Leads"
       home:
         title: "Leads"
-        actions:
-          recently_viewed: "Recently Viewed"
-          recently_created: "Recently Created"
       new:
         title: "New Lead"
       form:
@@ -77,4 +68,7 @@ en:
       edit: "Edit"
       delete: "Delete"
       invite: "Invite"
+      actions:
+        recently_viewed: "Recently Viewed"
+        recently_created: "Recently Created"
       delete_message: "Are you sure you want to delete this?"

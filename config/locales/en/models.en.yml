@@ -54,10 +54,9 @@ en:
         role: "Role"
         department: "Department"
         company: "Company"
-        start_of_day: "Start of day"
-        end_of_day: "End of day"
+        start_of_day: "Start of Day"
+        end_of_day: "End of Day"
         username: "Username"
-        nickname: "Nickname"
         email: "Email"
         password: "Password"
         password_confirmation: "Password Confirmation"
@@ -100,7 +99,7 @@ en:
         description: "Description"
         created_by: "Created by"
         created_at: "Created at"
-        updated_at: "updated_at"
+        updated_at: "Updated at"
       crm/contact:
         number: "Number"
         lead_source: "Lead Source"
@@ -122,6 +121,7 @@ en:
         created_at: "Created at"
         updated_at: "Updated at"
       crm/deal:
+        number: "Number"
         account: "Account"
         private: "Private"
         name: "Name"
@@ -161,6 +161,7 @@ en:
         created_at: "Created at"
         updated_at: "Updated at"
       crm/lead:
+        number: "Number"
         source: "Source"
         company: "Company"
         industry: "Industry"

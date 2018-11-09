@@ -1,4 +1,4 @@
-en:
+es:
   controllers:
     application:
       not_authorized: "No esta autorizado para realizar esta acción."
@@ -7,11 +7,29 @@ en:
         success: "¡Cuenta creada exitosamente!"
       update:
         success: "¡Cuenta actualizada exitosamente!"
+      destroy:
+        success: "¡Cuenta eliminada con éxito!"
     crm/contacts:
       create:
         success: "¡Contacto creado exitosamente!"
       update:
         success: "¡Contacto actualizado exitosamente!"
+      destroy:
+        success: "¡Contacto eliminado con éxito!"
+    crm/deals:
+      create:
+        success: "¡Oportunidad creada exitosamente!"
+      update:
+        success: "¡Oportunidad actualizada exitosamente!"
+      destroy:
+        success: "¡Oportunidad eliminada con éxito!"
+    crm/leads:
+      create:
+        success: "¡Prospecto creado exitosamente!"
+      update:
+        success: "¡Prospecto actualizado exitosamente!"
+      destroy:
+        success: "¡Prospecto eliminado con éxito!"
     shared:
       save: "Guardar"
       cancel: "Cancelar"
