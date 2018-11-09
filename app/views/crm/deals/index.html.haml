@@ -1,0 +1,15 @@
+-content_for :javascripts do
+  = javascript_include_tag 'lib/dataTables'
+
+.card
+  .card-header
+    %p.lead Deals
+    .card-actions
+      = link_to new_crm_deal_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    %table.table.table-striped.table-bordered.ajax-data-table{width:'100%', cellspacing:'0', data:{source: crm_deals_path(format: :json)}}
+      %thead
+        %tr
+          %th=t('activerecord.attributes.crm/deal.name')
+      %tbody

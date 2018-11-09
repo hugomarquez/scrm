@@ -1,0 +1,60 @@
+.card
+  .card-header
+    %p.lead= @deal.name
+    .card-actions
+      = link_to new_crm_deal_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+      = link_to edit_crm_deal_path(@deal), class:'btn btn-default' do
+        %i.fa.fa-pencil
+      = link_to crm_deal_path(@deal), method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-default' do
+        %i.fa.fa-trash
+  .card-block
+    %table.table.table-condensed.table-striped
+      %tr
+        %th=t('activerecord.attributes.crm/deal.name')
+        %td= @deal.name
+        %th=t('activerecord.attributes.crm/deal.close_at')
+        %td= l(@deal.close_at, format: :long)
+      %tr
+        %th=t('activerecord.attributes.crm/deal.account')
+        %td= link_to @deal.account.name, @deal.account if @deal.account
+        %td
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/deal.amount')
+        %td= @deal.amount
+        %th=t('activerecord.attributes.crm/deal.expected_revenue')
+        %td= @deal.expected_revenue
+      %tr
+        %th=t('activerecord.attributes.crm/deal.category')
+        %td=t("activerecord.attributes.crm/deal.categories_options.#{@deal.category}")
+        %th=t('activerecord.attributes.crm/deal.stage')
+        %td=t("activerecord.attributes.crm/deal.stages_options.#{@deal.stage}")
+      %tr
+        %th=t('activerecord.attributes.crm/deal.lead_source')
+        %td=t("activerecord.attributes.crm/deal.lead_sources_options.#{@deal.lead_source}")
+        %th=t('activerecord.attributes.crm/deal.probability')
+        %td= @deal.probability
+      %tr
+        %th=t('activerecord.attributes.crm/deal.main_competitor')
+        %td= @deal.main_competitor
+        %th=t('activerecord.attributes.crm/deal.next_step')
+        %td= @deal.next_step
+      %tr
+        %th=t('activerecord.attributes.crm/deal.created_at')
+        %td= l(@deal.created_at, format: :short)
+        %th=t('activerecord.attributes.crm/deal.updated_at')
+        %td= l(@deal.updated_at, format: :short)
+      %tr
+        %th=t('activerecord.attributes.crm/deal.created_by')
+        %td= @deal.created_by.person.full_name
+        %td
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/deal.delivery_status')
+        %td= @deal.delivery_status
+        %th=t('activerecord.attributes.crm/deal.tracking_number')
+        %td= @deal.tracking_number
+      %tr
+        %th=t('activerecord.attributes.crm/deal.description')
+        %td= @deal.description

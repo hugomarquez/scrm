@@ -1,0 +1,64 @@
+= form_for @deal, html:{class:'form-horizontal'} do |f|
+  .card-block
+    .row
+      .col-sm-6
+        = form_group_for f, :name do
+          .col-sm-8
+            = f.text_field :name, class:'form-control'
+      .col-sm-6
+        = form_group_for f, :close_at do
+          .col-sm-8
+            = f.date_field :close_at, class:'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :amount do
+          .col-sm-8
+            = f.number_field :amount, min:0, class:'form-control'
+      .col-sm-6
+        = form_group_for f, :expected_revenue do
+          .col-sm-8
+            = f.number_field :expected_revenue, min:0, class:'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :category do
+          .col-sm-8
+            = options_for_t_enum(f, :category)
+      .col-sm-6
+        = form_group_for f, :stage do
+          .col-sm-8
+            = options_for_t_enum(f, :stage)
+    .row
+      .col-sm-6
+        = form_group_for f, :next_step do
+          .col-sm-8
+            = f.text_field :next_step, class:'form-control'
+      .col-sm-6
+        = form_group_for f, :main_competitor do
+          .col-sm-8
+            = f.text_field :main_competitor, class:'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :lead_source do
+          .col-sm-8
+            = options_for_t_enum(f, :lead_source)
+      .col-sm-6
+        = form_group_for f, :probability do
+          .col-sm-8
+            = f.number_field :probability, min:0, max:100, step:10, class:'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :delivery_status do
+          .col-sm-8
+            = f.text_field :delivery_status, class:'form-control'
+      .col-sm-6
+        = form_group_for f, :tracking_number do
+          .col-sm-8
+            = f.text_field :tracking_number, class:'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :description do
+          .col-sm-8
+            = f.text_area :description, class:'form-control'
+    .row.form-group.text-center
+      = f.submit t('views.shared.save'), class: 'btn btn-sm btn-primary'
+      = link_to t('views.shared.cancel'), :back, class: 'btn btn-sm btn-danger'
