@@ -6,9 +6,9 @@
           .col-sm-8
             = f.text_field :name, class:'form-control'
       .col-sm-6
-        = form_group_for f, :close_at do
+        = form_group_for f, :number do
           .col-sm-8
-            = f.date_field :close_at, class:'form-control'
+            = f.text_field :number, class: 'form-control'
     .row
       .col-sm-6
         = form_group_for f, :amount do
@@ -55,6 +55,10 @@
           .col-sm-8
             = f.text_field :tracking_number, class:'form-control'
     .row
+      .col-sm-6
+        = form_group_for f, :close_at do
+          .col-sm-8
+            = f.date_field :close_at, class:'form-control'
       .col-sm-6
         = form_group_for f, :description do
           .col-sm-8

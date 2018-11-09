@@ -13,7 +13,7 @@ class Crm::Deal < ApplicationRecord
   belongs_to :account, class_name:'Crm::Account'
 
   before_save :set_probability
-  validates_presence_of :name, :close_at
+  validates_presence_of :name, :number, :close_at
   after_initialize :set_defaults, if: :new_record?
 
   enum stage:[
@@ -27,7 +27,7 @@ class Crm::Deal < ApplicationRecord
 
   attr_accessor :account_label
   before_validation :set_account_label
-  
+
   private
   def stage_probability
     case self.stage
@@ -63,8 +63,9 @@ class Crm::Deal < ApplicationRecord
   end
 
   def set_defaults
-    self.stage  ||= :prospecting
-    self.category  ||= :new_customer
+    self.number       ||= "D-" + rand(1000).to_s
+    self.stage        ||= :prospecting
+    self.category     ||= :new_customer
     self.lead_source  ||= :web
   end
 end

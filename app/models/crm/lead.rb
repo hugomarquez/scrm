@@ -12,7 +12,7 @@ class Crm::Lead < ApplicationRecord
 
   belongs_to :created_by, class_name:'Core::User'
 
-  validates_presence_of :company, :status
+  validates_presence_of :company, :status, :number
   after_initialize :set_defaults, if: :new_record?
 
   enum rating:    [:hot, :warm, :cold], _suffix: true
@@ -28,6 +28,7 @@ class Crm::Lead < ApplicationRecord
     def set_defaults
       self.rating     ||= :warm
       self.rating     ||= :open
+      self.number     ||= "L-" + rand(1000).to_s
     end
 
     def set_tracked_owner

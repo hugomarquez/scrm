@@ -4,13 +4,13 @@
       = render 'core/shared/personable_fields', f: person
     .row
       .col-sm-6
-        = form_group_for f, :source do
-          .col-sm-8
-            = f.text_field :source, class: 'form-control'
-      .col-sm-6
         = form_group_for f, :company do
           .col-sm-8
             = f.text_field :company, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :number do
+          .col-sm-8
+            = f.text_field :number, class: 'form-control'
     .row
       .col-sm-6
         = form_group_for f, :industry do
@@ -34,6 +34,11 @@
         = form_group_for f, :status do
           .col-sm-8
             = options_for_t_enum(f, :status)
+      .col-sm-6
+        = form_group_for f, :source do
+          .col-sm-8
+            = f.text_field :source, class: 'form-control'
+    .row
       .col-sm-6
         = form_group_for f, :description do
           .col-sm-8

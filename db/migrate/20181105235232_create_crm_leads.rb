@@ -2,6 +2,7 @@ class CreateCrmLeads < ActiveRecord::Migration[5.2]
   def change
     create_table :crm_leads do |t|
       t.string      :slug,      unique: true
+      t.string      :number
       t.string      :source
       t.string      :company
       t.string      :industry
