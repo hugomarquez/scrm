@@ -1,0 +1,46 @@
+#help.modal.fade{role:'dialog', tabindex: '-1'}
+  .modal-dialog.modal-lg{role:'document'}
+    .modal-content
+      .modal-header
+        %h4.modal-title= t('views.core/keyboard_help.title')
+      .modal-body
+        .row
+          .col-sm-4
+            %h5= t('views.core/keyboard_help.section.global.title')
+            %span.row
+              %kbd g d
+              = t('views.core/keyboard_help.section.global.dashboard')
+            %span.row
+              %kbd g a
+              = t('views.core/keyboard_help.section.global.accounts')
+            %span.row
+              %kbd g c
+              = t('views.core/keyboard_help.section.global.contacts')
+            %span.row
+              %kbd g l
+              = t('views.core/keyboard_help.section.global.leads')
+            %span.row
+              %kbd g m
+              = t('views.core/keyboard_help.section.global.deals')
+            %span.row
+              %kbd g u
+              = t('views.core/keyboard_help.section.global.users')
+          .col-sm-4
+            %h5= t('views.core/keyboard_help.section.actions.title')
+            %span.row
+              %kbd c a
+              = t('views.core/keyboard_help.section.actions.accounts')
+            %span.row
+              %kbd c c
+              = t('views.core/keyboard_help.section.actions.contacts')
+            %span.row
+              %kbd c l
+              = t('views.core/keyboard_help.section.actions.leads')
+            %span.row
+              %kbd c m
+              = t('views.core/keyboard_help.section.actions.deals')
+          .col-sm-4
+            %h5= t('views.core/keyboard_help.section.special.title')
+            %span.row
+              %kbd ?
+              = t('views.core/keyboard_help.section.special.show')

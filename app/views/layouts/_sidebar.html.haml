@@ -1,5 +1,9 @@
 .sidebar
   %ul.nav.nav-sidebar
+    %li{class: "#{controller.controller_name == 'dashboard' ? 'active' : ''}"}
+      = link_to core_root_path, id:'sDashboard' do
+        %span.fa.fa-dashboard
+        = t('views.sidebar.nav.dashboard')
     %li{class: "#{controller.controller_name == 'accounts' ? 'active' : ''}"}
       = link_to crm_accounts_path, id:'sAccounts' do
         %span.fa.fa-building
@@ -18,6 +22,6 @@
         = t('views.sidebar.nav.deals')
   %ul.nav.nav-sidebar
     %li{class: "#{controller.controller_name == 'users' ? 'active' : ''}"}
-      = link_to core_users_path do
+      = link_to core_users_path, id:'sUsers' do
         %span.fa.fa-users
         =t('views.sidebar.nav.users')

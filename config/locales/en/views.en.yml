@@ -1,5 +1,25 @@
 en:
   views:
+    core/keyboard_help:
+      title: "Keyboard Shortcuts"
+      section:
+        global:
+          title: "Global Navigation"
+          dashboard: "Go to dashboard"
+          accounts: "Go to accounts"
+          contacts: "Go to contacts"
+          deals: "Go to deals"
+          leads: "Go to leads"
+          users: "Go to users"
+        actions:
+          title: "Actions"
+          accounts: "Create new account"
+          contacts: "Create new contact"
+          deals: "Create new deal"
+          leads: "Create new lead"
+        special:
+          title: "Special Keys"
+          show: "Show/Hide cheatsheet"
     core/users:
       index:
         title: "Users"
@@ -47,6 +67,7 @@ en:
       nav:
         accounts: "Accounts"
         contacts: "Contacts"
+        dashboard: "Dashboard"
         leads: "Leads"
         deals: "Deals"
         users: "Users"

@@ -1,26 +1,30 @@
 var Flash = (function(){
-  // Cache DOM
-  var $flash = $('#flash');
 
   // Functions
-  var searchFlash = function() {
-    if ($('#flash').length) {
-      newFlash($('#flash'));
+  var search = function() {
+    let f = $('#flash');
+    if (f.length) {
+      let type = f.data("type");
+      let message = f.data("message");
+
+      if(type == "notice" || type == "alert") {
+        flash("info", message);
+      } else {
+        flash(type, message);
+      }
     }
   }
 
-  function newFlash(flash) {
-    console.log(flash);
+  function flash(type, message) {
     swal({
-      title: flash.data('type'),
-      text: flash.data('message'),
-      type: flash.data('type'),
-      timer: 2000
+      text: message,
+      type: type,
+      timer: 2000,
     }).catch(swal.noop);
   }
 
   return{
-    searchFlash:searchFlash
+    search:search
   };
 
 })();

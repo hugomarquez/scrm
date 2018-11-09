@@ -18,5 +18,7 @@
           = render 'layouts/sidebar'
         %main
           = yield
+          - if current_core_user
+            = render 'core/shared/keyboard_help'
     = flash_messages if show_layout_flash?
     = yield :javascripts
