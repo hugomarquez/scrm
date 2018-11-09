@@ -1,0 +1,21 @@
+en:
+  controllers:
+    application:
+      not_authorized: "No esta autorizado para realizar esta acción."
+    crm/accounts:
+      create:
+        success: "¡Cuenta creada exitosamente!"
+      update:
+        success: "¡Cuenta actualizada exitosamente!"
+    crm/contacts:
+      create:
+        success: "¡Contacto creado exitosamente!"
+      update:
+        success: "¡Contacto actualizado exitosamente!"
+    shared:
+      save: "Guardar"
+      cancel: "Cancelar"
+      edit: "Editar"
+      delete: "Eliminar"
+      invite: "Invitar"
+      delete_message: "¿Esta seguro de querer eliminar esto?"

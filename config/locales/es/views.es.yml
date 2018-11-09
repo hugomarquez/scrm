@@ -1,0 +1,47 @@
+en:
+  views:
+    core/users:
+      index:
+        title: "Usuarios"
+      edit:
+        title: "Editar usuario"
+      new:
+        title: "Nuevo usuario"
+    crm/accounts:
+      index:
+        title: "Cuentas"
+      home:
+        title: "Cuentas"
+        actions:
+          recently_viewed: "Recientemente Visto"
+          recently_created: "Recientemente Creado"
+      new:
+        title: "Nueva Cuenta"
+      form:
+        title: "Nueva Cuenta"
+    crm/contacts:
+      index:
+        title: "Contactos"
+      home:
+        title: "Contactos"
+        actions:
+          recently_viewed: "Recientemente Visto"
+          recently_created: "Recientemente Creado"
+      new:
+        title: "Nuevo Contacto"
+      form:
+        title: "Nuevo Contacto"
+    sidebar:
+      nav:
+        accounts: "Cuentas"
+        contacts: "Contactos"
+        leads: "Pistas"
+        deals: "Tratos"
+        users: "Usuarios"
+    shared:
+      save: "Guardar"
+      cancel: "Cancelar"
+      edit: "Editar"
+      delete: "Eliminar"
+      invite: "Invitar"
+      delete_message: "¿Está seguro que quiere eliminar esto?"
