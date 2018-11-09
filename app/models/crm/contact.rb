@@ -19,6 +19,7 @@ class Crm::Contact < ApplicationRecord
   attr_accessor :account_label
   before_validation :set_account_label
   validates_presence_of :person, :number
+  validates_uniqueness_of :number
 
   after_initialize :set_defaults, if: :new_record?
 
@@ -29,9 +30,16 @@ class Crm::Contact < ApplicationRecord
   end
 
   def set_defaults
-    self.number       ||= "C-" + rand(1000).to_s
+    self.number       ||= "C-" + generate_number
     self.level        ||= :primary
     self.lead_source  ||= :web
+  end
+
+  def generate_number
+    loop do
+      token = rand(1000).to_s
+      break token unless Crm::Contact.where(number: token).first
+    end
   end
 
   def set_tracked_owner

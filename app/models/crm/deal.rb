@@ -14,6 +14,7 @@ class Crm::Deal < ApplicationRecord
 
   before_save :set_probability
   validates_presence_of :name, :number, :close_at
+  validates_uniqueness_of :number
   after_initialize :set_defaults, if: :new_record?
 
   enum stage:[
@@ -56,16 +57,23 @@ class Crm::Deal < ApplicationRecord
     self.created_by
   end
 
+  def set_defaults
+    self.number       ||= "D-" + generate_number
+    self.stage        ||= :prospecting
+    self.category     ||= :new_customer
+    self.lead_source  ||= :web
+  end
+
+  def generate_number
+    loop do
+      token = rand(1000).to_s
+      break token unless Crm::Deal.where(number: token).first
+    end
+  end
+
   def remove_activity
     activity = PublicActivity::Activity.find_by(trackable_id: self.id, trackable_type: self.class.to_s, key: "#{self.class.to_s.downcase}.create")
     activity.destroy if activity.present?
     true
-  end
-
-  def set_defaults
-    self.number       ||= "D-" + rand(1000).to_s
-    self.stage        ||= :prospecting
-    self.category     ||= :new_customer
-    self.lead_source  ||= :web
   end
 end

@@ -3,7 +3,7 @@ class CreateCrmAccounts < ActiveRecord::Migration[5.2]
     create_table :crm_accounts do |t|
       t.string      :slug,      unique: true
       t.string      :name
-      t.string      :number
+      t.string      :number,    unique: true
       t.string      :phone
       t.string      :extension
       t.string      :email

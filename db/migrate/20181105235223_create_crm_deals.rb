@@ -2,8 +2,8 @@ class CreateCrmDeals < ActiveRecord::Migration[5.2]
   def change
     create_table :crm_deals do |t|
       t.string      :slug,      unique: true
+      t.string      :number,    unique: true
       t.boolean     :private
-      t.string      :number
       t.string      :name
       t.integer     :category
       t.integer     :lead_source

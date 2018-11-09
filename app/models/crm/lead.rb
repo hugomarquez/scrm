@@ -25,19 +25,26 @@ class Crm::Lead < ApplicationRecord
   end
 
   private
-    def set_defaults
-      self.rating     ||= :warm
-      self.rating     ||= :open
-      self.number     ||= "L-" + rand(1000).to_s
-    end
+  def set_defaults
+    self.number     ||= "L-" + generate_number
+    self.rating     ||= :warm
+    self.status     ||= :open
+  end
 
-    def set_tracked_owner
-      self.created_by
+  def generate_number
+    loop do
+      token = rand(1000).to_s
+      break token unless Crm::Lead.where(number: token).first
     end
+  end
 
-    def remove_activity
-      activity = PublicActivity::Activity.find_by(trackable_id: self.id, trackable_type: self.class.to_s, key: "#{self.class.to_s.downcase}.create")
-      activity.destroy if activity.present?
-      true
-    end
+  def set_tracked_owner
+    self.created_by
+  end
+
+  def remove_activity
+    activity = PublicActivity::Activity.find_by(trackable_id: self.id, trackable_type: self.class.to_s, key: "#{self.class.to_s.downcase}.create")
+    activity.destroy if activity.present?
+    true
+  end
 end

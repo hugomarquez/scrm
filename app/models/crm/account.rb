@@ -15,6 +15,7 @@ class Crm::Account < ApplicationRecord
   has_many :deals, class_name:'Crm::Deal'
 
   validates_presence_of :name, :number
+  validates_uniqueness_of :number
 
   after_initialize :set_defaults, if: :new_record?
 
@@ -26,11 +27,18 @@ class Crm::Account < ApplicationRecord
   private
 
   def set_defaults
-    self.number     ||= "A-" + rand(1000).to_s
+    self.number     ||= "A-" + generate_number
     self.rating     ||= :warm
     self.ownership  ||= :private
     self.priority   ||= :medium
     self.employees  ||= :medium
+  end
+
+  def generate_number
+    loop do
+      token = rand(1000).to_s
+      break token unless Crm::Account.where(number: token).first
+    end
   end
 
   def set_tracked_owner

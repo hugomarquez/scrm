@@ -184,8 +184,8 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
 
   create_table "crm_deals", force: :cascade do |t|
     t.string "slug"
-    t.boolean "private"
     t.string "number"
+    t.boolean "private"
     t.string "name"
     t.integer "category"
     t.integer "lead_source"
