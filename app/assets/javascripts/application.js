@@ -21,6 +21,7 @@
 //= require chosen-jquery
 //= require lib/sweetalert2.min.js
 //= require lib/pace.min.js
+//= require lib/chart.min.js
 //= require core/flash.js
 
 $(document).ready(function(){
