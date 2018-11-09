@@ -6,6 +6,8 @@
         %i.fa.fa-plus
       = link_to edit_crm_contact_path(@contact), class:'btn btn-default' do
         %i.fa.fa-pencil
+      = link_to crm_contact_path(@contact), method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-danger' do
+        %i.fa.fa-trash
   .card-block
     %table.table.table-condensed.table-striped
       %tr

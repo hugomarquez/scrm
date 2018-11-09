@@ -71,7 +71,8 @@ class Crm::ContactsController < ApplicationController
   def destroy
     authorize @contact
     @contact.destroy
-    redirect_to crm_home_contacts_path
+    flash[:success] = t('controllers.crm/contacts.destroy.success')
+    redirect_to crm_contacts_path
   end
 
   private

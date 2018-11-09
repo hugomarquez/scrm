@@ -6,7 +6,7 @@
         %i.fa.fa-plus
       = link_to edit_crm_lead_path(@lead), class:'btn btn-default' do
         %i.fa.fa-pencil
-      = link_to crm_lead_path(@lead), method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-default' do
+      = link_to crm_lead_path(@lead), method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-danger' do
         %i.fa.fa-trash
   .card-block
     %table.table.table-condensed.table-striped

@@ -27,6 +27,7 @@ class Crm::DealsController < ApplicationController
     authorize @deal
     if @deal.valid?
       @deal.save
+      flash[:success] = t('controllers.crm/deals.create.success')
       redirect_to crm_deal_path(@deal)
     else
       render :new
@@ -38,6 +39,7 @@ class Crm::DealsController < ApplicationController
     @deal.attributes = deal_params
     if @deal.valid?
       @deal.save
+      flash[:success] = t('controllers.crm/deals.update.success')
       redirect_to crm_deal_path(@deal)
     else
       render :edit
@@ -47,6 +49,7 @@ class Crm::DealsController < ApplicationController
   def destroy
     authorize @deal
     @deal.destroy
+    flash[:success] = t('controllers.crm/deals.destroy.success')
     redirect_to crm_deals_path
   end
 

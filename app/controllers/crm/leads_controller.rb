@@ -17,6 +17,7 @@ class Crm::LeadsController < ApplicationController
     @new_lead = @lead.clone_with_associations
     if @new_lead.valid?
       @new_lead.save
+      flash[:success] = t('controllers.crm/leads.clone.success')
       redirect_to crm_lead_path(@new_lead)
     else
       render :new
@@ -63,6 +64,7 @@ class Crm::LeadsController < ApplicationController
     authorize @lead
     if @lead.valid?
       @lead.save
+      flash[:success] = t('controllers.crm/leads.create.success')
       redirect_to crm_leads_path
     else
       render :new
@@ -72,6 +74,7 @@ class Crm::LeadsController < ApplicationController
   def update
     authorize @lead
     if @lead.update_attributes(lead_params)
+      flash[:success] = t('controllers.crm/leads.update.success')
       redirect_to crm_lead_path(@lead)
     else
       render :edit
@@ -81,7 +84,8 @@ class Crm::LeadsController < ApplicationController
   def destroy
     authorize @lead
     @lead.destroy
-    redirect_to crm_home_leads_path
+    flash[:success] = t('controllers.crm/leads.destroy.success')
+    redirect_to crm_leads_path
   end
 
   private

@@ -7,11 +7,31 @@ en:
         success: "Account created successfully!"
       update:
         success: "Account updated successfully!"
+      destroy:
+        success: "Account deleted successfully!"
     crm/contacts:
       create:
         success: "Contact created successfully!"
       update:
         success: "Contact updated successfully!"
+      destroy:
+        success: "Contact deleted successfully!"
+    crm/deals:
+      create:
+        success: "Deal created successfully!"
+      update:
+        success: "Deal updated successfully!"
+      destroy:
+        success: "Deal deleted successfully!"
+    crm/leads:
+      create:
+        success: "Lead created successfully!"
+      clone:
+        success: "Lead cloned successfully!"
+      update:
+        success: "Lead updated successfully!"
+      destroy:
+        success: "Lead deleted successfully!"
     shared:
       save: "Save"
       cancel: "Cancel"

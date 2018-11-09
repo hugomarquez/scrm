@@ -51,7 +51,8 @@ class Crm::AccountsController < ApplicationController
   def destroy
     authorize @account
     @account.destroy
-    redirect_to crm.home_accounts_path
+    flash[:success] = t('controllers.crm/accounts.destroy.success')
+    redirect_to crm_accounts_path
   end
 
   private
