@@ -1,0 +1,43 @@
+= form_for @lead, html:{class:'form-horizontal'} do |f|
+  .card-block
+    = f.fields_for :person do |person|
+      = render 'core/shared/personable_fields', f: person
+    .row
+      .col-sm-6
+        = form_group_for f, :source do
+          .col-sm-8
+            = f.text_field :source, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :company do
+          .col-sm-8
+            = f.text_field :company, class: 'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :industry do
+          .col-sm-8
+            = f.text_field :industry, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :sic_code do
+          .col-sm-8
+            = f.text_field :sic_code, class: 'form-control'
+    .row
+      .col-sm-6
+        = form_group_for f, :website do
+          .col-sm-8
+            = f.text_field :website, class: 'form-control'
+      .col-sm-6
+        = form_group_for f, :rating do
+          .col-sm-8
+            = options_for_t_enum(f, :rating)
+    .row
+      .col-sm-6
+        = form_group_for f, :status do
+          .col-sm-8
+            = options_for_t_enum(f, :status)
+      .col-sm-6
+        = form_group_for f, :description do
+          .col-sm-8
+            = f.text_area :description, class: 'form-control'
+    .row.form-group.text-center
+      = f.submit t('views.shared.save'), class: 'btn btn-sm btn-primary'
+      = link_to t('views.shared.cancel'), :back, class: 'btn btn-sm btn-danger'

@@ -1,0 +1,55 @@
+.card
+  .card-header
+    %p.lead= @lead.person.full_name if @lead.person
+    .card-actions
+      = link_to new_crm_lead_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+      = link_to edit_crm_lead_path(@lead), class:'btn btn-default' do
+        %i.fa.fa-pencil
+      = link_to crm_lead_path(@lead), method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-default' do
+        %i.fa.fa-trash
+  .card-block
+    %table.table.table-condensed.table-striped
+      %tr
+        %th=t('activerecord.attributes.core/person.full_name')
+        %td= @lead.person.full_name
+        %th=t('activerecord.attributes.core/person.phone')
+        %td= @lead.person.phone
+      %tr
+        %th=t('activerecord.attributes.core/person.email')
+        %td= @lead.person.email
+        %th=t('activerecord.attributes.core/person.extension')
+        %td= @lead.person.extension
+      %tr
+        %th=t('activerecord.attributes.core/person.mobile')
+        %td= @lead.person.mobile
+        %th=t('activerecord.attributes.crm/lead.rating')
+        %td=t("activerecord.attributes.crm/lead.ratings_options.#{@lead.rating}")
+      %tr
+        %th=t('activerecord.attributes.crm/lead.source')
+        %td= @lead.source
+        %th=t('activerecord.attributes.crm/lead.company')
+        %td= @lead.company
+      %tr
+        %th=t('activerecord.attributes.crm/lead.industry')
+        %td= @lead.industry
+        %th=t('activerecord.attributes.crm/lead.sic_code')
+        %td= @lead.sic_code
+      %tr
+        %th=t('activerecord.attributes.crm/lead.status')
+        %td=t("activerecord.attributes.crm/lead.statuses_options.#{@lead.status}")
+        %th=t('activerecord.attributes.crm/lead.website')
+        %td= @lead.website
+      %tr
+        %th=t('activerecord.attributes.crm/lead.created_at')
+        %td= l(@lead.created_at, format: :short)
+        %th=t('activerecord.attributes.crm/lead.updated_at')
+        %td= l(@lead.updated_at, format: :short)
+      %tr
+        %th=t('activerecord.attributes.crm/lead.created_by')
+        %td= @lead.created_by.person.full_name if @lead.created_by && @lead.created_by.person
+        %th
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/lead.description')
+        %td= @lead.description

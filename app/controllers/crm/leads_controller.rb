@@ -5,6 +5,13 @@ class Crm::LeadsController < ApplicationController
     @recent_leads = Crm::Lead.recent
   end
 
+  def index
+    respond_to do |format|
+      format.html
+      format.json { render json: Crm::LeadDatatable.new(view_context) }
+    end
+  end
+
   def clone
     authorize @lead
     @new_lead = @lead.clone_with_associations
@@ -36,25 +43,14 @@ class Crm::LeadsController < ApplicationController
     end
   end
 
-  def index
-    respond_to do |format|
-      format.html
-      format.json { render json: Crm::LeadDatatable.new(view_context) }
-    end
-  end
-
   def new
     @lead = Crm::Lead.new
     @lead.build_person
-    @lead.addresses.build
     authorize @lead
   end
 
   def show
     authorize @lead
-    @tasks = @lead.tasks.includes(:assigned_to).page(params[:task_page]).per(5)
-    @events = @lead.events.includes(:assigned_to).page(params[:event_page]).per(5)
-    @notes = @lead.notes.page(params[:note_page]).per(5)
   end
 
   def edit
@@ -63,7 +59,7 @@ class Crm::LeadsController < ApplicationController
 
   def create
     @lead = Crm::Lead.new(lead_params)
-    @lead.created_by = current_user
+    @lead.created_by = current_core_user
     authorize @lead
     if @lead.valid?
       @lead.save
@@ -94,7 +90,7 @@ class Crm::LeadsController < ApplicationController
   end
 
   def lead_params
-    params.require(:lead).permit(
+    params.require(:crm_lead).permit(
       :id, :source, :company, :industry, :sic_code, :status,
       :website, :rating, :description, :created_by_id,
       person_attributes:
