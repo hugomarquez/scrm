@@ -45,6 +45,15 @@ en:
         title: "New Contact"
       form:
         title: "New Contact"
+    crm/deals:
+      index:
+        title: "Deals"
+      home:
+        title: "Deals"
+      new:
+        title: "New Deal"
+      form:
+        title: "New Deal"
     crm/leads:
       index:
         title: "Leads"

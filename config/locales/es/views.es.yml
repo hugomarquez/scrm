@@ -45,6 +45,15 @@ es:
         title: "Nuevo Contacto"
       form:
         title: "Nuevo Contacto"
+    crm/deals:
+      index:
+        title: "Oportunidades"
+      home:
+        title: "Oportunidades"
+      new:
+        title: "Nueva Oportunidad"
+      form:
+        title: "Nueva Oportunidad"
     crm/leads:
       index:
         title: "Prospectos"

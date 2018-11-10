@@ -63,7 +63,7 @@ en:
         remember_me: "Remember me"
       crm/account:
         name: "Account Name"
-        number: "Account Number"
+        number: "Number"
         email: "Email"
         phone: "Phone"
         extension: "Extension"

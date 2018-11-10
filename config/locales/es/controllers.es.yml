@@ -26,6 +26,8 @@ es:
     crm/leads:
       create:
         success: "¡Prospecto creado exitosamente!"
+      clone:
+        success: "¡Prospecto clonado exitosamente!"
       update:
         success: "¡Prospecto actualizado exitosamente!"
       destroy:
