@@ -13,6 +13,7 @@ class Crm::Lead < ApplicationRecord
   belongs_to :created_by, class_name:'Core::User'
 
   validates_presence_of :company, :status, :number
+  validates_uniqueness_of :number
   after_initialize :set_defaults, if: :new_record?
 
   enum rating:    [:hot, :warm, :cold], _suffix: true
@@ -21,6 +22,7 @@ class Crm::Lead < ApplicationRecord
   def clone_with_associations
     new_lead = self.dup
     new_lead.build_person(self.person.dup.attributes)
+    new_lead.number = "L-" + generate_number
     new_lead
   end
 

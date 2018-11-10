@@ -12,8 +12,8 @@ class Crm::AccountDatatable < Core::Datatable
   def data
     records.map do |record|
       [
+        link_to(record.number, record),
         link_to(record.name, record),
-        link_to(record.number, record)
       ]
     end
   end

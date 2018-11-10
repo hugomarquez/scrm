@@ -3,12 +3,14 @@ class Crm::DealDatatable < Core::Datatable
 
   def sortable_columns
     @sortable_columns ||= %w(
+      Crm::Deal.number
       Crm::Deal.name
     )
   end
 
   def searchable_columns
     @searchable_columns ||= %w(
+      Crm::Deal.number
       Crm::Deal.name
     )
   end
@@ -16,6 +18,7 @@ class Crm::DealDatatable < Core::Datatable
   def data
     records.map do |record|
       [
+        link_to(record.number, record),
         link_to(record.name, record),
       ]
     end

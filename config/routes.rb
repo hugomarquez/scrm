@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
     resources :leads, class_name:'Crm::Lead' do
       get 'home', on: :collection
+      post 'clone', on: :member
+      post 'convert', on: :member
     end
 
     resources :deals, class_name:'Crm::Deal' do

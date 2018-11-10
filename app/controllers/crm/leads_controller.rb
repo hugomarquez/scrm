@@ -35,12 +35,14 @@ class Crm::LeadsController < ApplicationController
       extension: @lead.person.extension,
       created_by: current_user,
     )
-    @contact = @account.contacts.build(created_by: current_user)
+    @contact = @account.contacts.build(created_by: current_core_user)
     @contact.build_person(@lead.person.dup.attributes)
 
+    # TODO: Create deal as well
     if @account.valid?
       @account.save
-      redirect_to :back
+      flash[:success] = t('controllers.crm/leads.convert.success')
+      redirect_to crm_account_path(@account)
     end
   end
 
@@ -97,6 +99,7 @@ class Crm::LeadsController < ApplicationController
     params.require(:crm_lead).permit(
       :id, :source, :company, :industry, :sic_code, :status,
       :website, :rating, :description, :created_by_id,
+      :number,
       person_attributes:
         [:_destroy, :id, :title, :first_name, :last_name, :phone, :home_phone,
           :other_phone, :email, :assistant, :asst_phone, :extension, :mobile,

@@ -3,6 +3,8 @@ class Crm::LeadDatatable < Core::Datatable
 
   def sortable_columns
     @sortable_columns ||= %w(
+      Crm::Lead.number
+      Crm::Lead.company
       Core::Person.first_name
       Core::Person.last_name
       Core::Person.email
@@ -11,6 +13,8 @@ class Crm::LeadDatatable < Core::Datatable
 
   def searchable_columns
     @searchable_columns ||= %w(
+      Crm::Lead.number
+      Crm::Lead.company
       Core::Person.first_name
       Core::Person.last_name
       Core::Person.email
@@ -20,8 +24,9 @@ class Crm::LeadDatatable < Core::Datatable
   def data
     records.map do |record|
       [
+        link_to(record.number, record),
+        link_to(record.company, record),
         link_to(record.person.first_name, record),
-        link_to(record.person.last_name, record),
         link_to(record.person.email, record)
       ]
     end
