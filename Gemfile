@@ -63,6 +63,7 @@ group :development do
   gem 'letter_opener', '~> 1.6.0'
   gem 'rack-mini-profiler'
   gem 'bullet', '~> 5.8.1'
+  gem 'yard'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

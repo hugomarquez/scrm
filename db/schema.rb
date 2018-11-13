@@ -144,8 +144,8 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
 
   create_table "crm_accounts", force: :cascade do |t|
     t.string "slug"
-    t.string "name"
     t.string "number"
+    t.string "name"
     t.string "phone"
     t.string "extension"
     t.string "email"
