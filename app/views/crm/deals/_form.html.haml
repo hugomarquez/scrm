@@ -2,6 +2,16 @@
   .card-block
     .row
       .col-sm-6
+        = form_group_for f, :account do
+          .col-sm-8
+            .input-group
+              = f.hidden_field :account_id, id:'account_input'
+              = f.text_field :account_label, id:'account_label', class:'form-control'
+              %span.input-group-btn
+                %a.btn.btn-default{data:{toggle:'modal', target:'#accountsLookup'}}
+                  %i.fa.fa-search
+    .row
+      .col-sm-6
         = form_group_for f, :name do
           .col-sm-8
             = f.text_field :name, class:'form-control'

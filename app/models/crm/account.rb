@@ -31,7 +31,7 @@ class Crm::Account < ApplicationRecord
     self.rating     ||= :warm
     self.ownership  ||= :private
     self.priority   ||= :medium
-    self.employees  ||= :medium
+    self.employees  ||= :micro
   end
 
   def generate_number
