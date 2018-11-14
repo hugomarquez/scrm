@@ -11,8 +11,8 @@
   .card-block
     %table.table.table-condensed.table-striped
       %tr
-        %th=t('activerecord.attributes.crm/contact.account')
-        %td= @contact.account
+        %th=t('activerecord.attributes.crm/deal.account')
+        %td= link_to @contact.account.name, @contact.account if @contact.account
         %th=t('activerecord.attributes.crm/contact.number')
         %td= @contact.number
       %tr
