@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   end
 
   namespace :crm, path: '/sales' do
-    root to: 'dashboard#index'
-
     resources :accounts, class_name:'Crm::Account' do
       collection do
         get 'home'
