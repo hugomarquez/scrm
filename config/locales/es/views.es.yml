@@ -22,7 +22,7 @@ es:
           show: "Mostrar / Ocultar hoja de atajos"
     core/dashboard:
       calendar:
-        title: "Agenda"
+        title: "Calendario"
     core/users:
       index:
         title: "Usuarios"
@@ -69,7 +69,7 @@ es:
     sidebar:
       nav:
         accounts: "Cuentas"
-        calendar: "Agenda"
+        calendar: "Calendario"
         contacts: "Contactos"
         dashboard: "Panel de Control"
         leads: "Prospectos"

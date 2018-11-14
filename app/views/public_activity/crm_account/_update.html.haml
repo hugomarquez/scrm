@@ -1,0 +1,11 @@
+%li
+  - if activity.owner
+    %div
+      %h4= activity.owner.person.full_name
+      %span updated account
+      - if activity.trackable
+        = link_to activity.trackable.name, activity.trackable
+      - else
+        which has since been removed
+      = time_ago_in_words(activity.created_at)
+      %span ago
