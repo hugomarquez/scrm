@@ -1,5 +1,5 @@
 module FormHelper
-  
+
   def errors_for(form, field)
     content_tag(:p, form.object.errors[field].try(:first), class: 'col-sm-offset-6 col-sm-6 help-block')
   end
@@ -8,7 +8,7 @@ module FormHelper
     label = opts.fetch(:label){true}
     has_errors = form.object.errors[field].present?
     content_tag :div, class: "form-group #{'has-error' if has_errors} #{'required' if required?(form, field)}" do
-      concat form.label(field, class: 'col-md-4 form-control-label') if label
+      concat form.label(field, class: 'col-sm-4 form-control-label') if label
       concat capture(&block)
       concat errors_for(form, field)
     end

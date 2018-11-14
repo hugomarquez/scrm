@@ -12,6 +12,13 @@ class Crm::AccountsController < ApplicationController
     end
   end
 
+  #TODO: Implement this on an api controller with user - api token authentication
+  def lookup
+    respond_to do |format|
+      format.json { render json: Crm::AccountLookup.new(view_context) }
+    end
+  end
+
   def new
     @account = Crm::Account.new
     authorize @account

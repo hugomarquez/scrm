@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     root to: 'dashboard#index'
 
     resources :accounts, class_name:'Crm::Account' do
-      get 'home', on: :collection
+      collection do
+        get 'home'
+        get 'lookup'
+      end
     end
 
     resources :contacts, class_name:'Crm::Contact' do
