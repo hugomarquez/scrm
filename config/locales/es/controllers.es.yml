@@ -28,6 +28,8 @@ es:
         success: "¡Prospecto creado exitosamente!"
       clone:
         success: "¡Prospecto clonado exitosamente!"
+      convert:
+        success: "¡Prospecto convertido exitosamente!"
       update:
         success: "¡Prospecto actualizado exitosamente!"
       destroy:

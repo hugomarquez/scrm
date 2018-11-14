@@ -28,6 +28,8 @@ en:
         success: "Lead created successfully!"
       clone:
         success: "Lead cloned successfully!"
+      convert:
+        success: "Lead converted successfully"
       update:
         success: "Lead updated successfully!"
       destroy:

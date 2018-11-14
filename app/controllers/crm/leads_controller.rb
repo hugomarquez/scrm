@@ -33,16 +33,25 @@ class Crm::LeadsController < ApplicationController
       description: @lead.description,
       phone: @lead.person.phone,
       extension: @lead.person.extension,
-      created_by: current_user,
+      created_by: current_core_user,
     )
     @contact = @account.contacts.build(created_by: current_core_user)
     @contact.build_person(@lead.person.dup.attributes)
 
-    # TODO: Create deal as well
-    if @account.valid?
+    @deal = Crm::Deal.new(
+      account: @account,
+      name: @lead.company.to_s + " - " + Date.today.to_s,
+      category: :new_customer,
+      stage: :prospecting,
+      close_at: Time.now + 30.days,
+      created_by: current_core_user
+    )
+    if @account.valid? && @deal.valid?
       @account.save
+      @deal.save
       flash[:success] = t('controllers.crm/leads.convert.success')
       redirect_to crm_account_path(@account)
+      #TODO: else flash error and redirect to lead path
     end
   end
 

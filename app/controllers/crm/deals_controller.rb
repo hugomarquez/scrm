@@ -25,7 +25,6 @@ class Crm::DealsController < ApplicationController
     @deal = Crm::Deal.new(deal_params)
     @deal.created_by = current_core_user
     authorize @deal
-    byebug
     if @deal.valid?
       @deal.save
       flash[:success] = t('controllers.crm/deals.create.success')

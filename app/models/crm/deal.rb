@@ -13,7 +13,7 @@ class Crm::Deal < ApplicationRecord
   belongs_to :account, class_name:'Crm::Account', optional: true
 
   before_save :set_probability
-  validates_presence_of :account, :name, :number, :close_at
+  validates_presence_of :account, :category, :close_at, :name, :number, :stage
   validates_uniqueness_of :number
   after_initialize :set_defaults, if: :new_record?
 
