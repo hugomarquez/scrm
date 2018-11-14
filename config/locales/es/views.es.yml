@@ -20,6 +20,9 @@ es:
         special:
           title: "Teclas Especiales"
           show: "Mostrar / Ocultar hoja de atajos"
+    core/dashboard:
+      calendar:
+        title: "Agenda"
     core/users:
       index:
         title: "Usuarios"
@@ -66,6 +69,7 @@ es:
     sidebar:
       nav:
         accounts: "Cuentas"
+        calendar: "Agenda"
         contacts: "Contactos"
         dashboard: "Panel de Control"
         leads: "Prospectos"

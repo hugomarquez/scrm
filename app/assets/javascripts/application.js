@@ -24,6 +24,9 @@
 //= require lib/chart.min.js
 //= require lib/flash.js
 //= require lib/i18n.js
+//= require lib/moment.js
+//= require lib/fullcalendar.js
+//= require lib/fullcalendar/locale-all.js
 
 $(document).ready(function(){
   // Initialize flash msgs

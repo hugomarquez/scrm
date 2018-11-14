@@ -20,6 +20,9 @@ en:
         special:
           title: "Special Keys"
           show: "Show/Hide cheatsheet"
+    core/dashboard:
+      calendar:
+        title: "Calendar"
     core/users:
       index:
         title: "Users"
@@ -66,6 +69,7 @@ en:
     sidebar:
       nav:
         accounts: "Accounts"
+        calendar: "Calendar"
         contacts: "Contacts"
         dashboard: "Dashboard"
         leads: "Leads"

@@ -1,0 +1,9 @@
+-content_for :javascripts do
+  = javascript_include_tag 'core/dashboard.js'
+.row
+  .col-sm-12
+    .card
+      .card-header
+        %h2= t('views.core/dashboard.calendar.title')
+      .card-block
+        .calendar

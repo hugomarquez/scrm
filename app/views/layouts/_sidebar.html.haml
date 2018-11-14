@@ -1,6 +1,6 @@
 .sidebar
   %ul.nav.nav-sidebar
-    %li{class: "#{controller.controller_name == 'dashboard' ? 'active' : ''}"}
+    %li{class: "#{controller.action_name == 'dashboard' ? 'active' : ''}"}
       = link_to core_root_path, id:'sDashboard' do
         %span.fa.fa-dashboard
         = t('views.sidebar.nav.dashboard')
@@ -21,6 +21,10 @@
         %span.fa.fa-money
         = t('views.sidebar.nav.deals')
   %ul.nav.nav-sidebar
+    %li{class: "#{controller.action_name == 'calendar' ? 'active' : ''}"}
+      = link_to core_calendar_path, id:'sCalendar' do
+        %span.fa.fa-calendar
+        =t('views.sidebar.nav.calendar')
     %li{class: "#{controller.controller_name == 'users' ? 'active' : ''}"}
       = link_to core_users_path, id:'sUsers' do
         %span.fa.fa-users
