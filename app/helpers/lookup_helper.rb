@@ -53,7 +53,7 @@ module LookupHelper
 
   def modal_footer
     content_tag :div, class:'modal-footer'  do
-      content_tag :button,'Cancel',class:'btn btn-default', 'data-dismiss': 'modal', type:'button'
+      content_tag :button, t('views.shared.cancel'), class:'btn btn-default', 'data-dismiss': 'modal', type:'button'
     end
   end
 

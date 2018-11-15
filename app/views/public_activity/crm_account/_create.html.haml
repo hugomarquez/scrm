@@ -1,11 +1,13 @@
-%li
-  - if activity.owner
-    %div
-      %h4= activity.owner.person.full_name
-      %span added a new Account
-      - if activity.trackable
-        = link_to activity.trackable.name, activity.trackable
-      - else
-        which has since been created
-      = time_ago_in_words(activity.created_at)
-      %span ago
+%li.list-group-item
+  %span.fa.fa-plus
+  %span.fa.fa-building
+  %small.text-muted= l(a.created_at, format: :long)
+  %br
+  - if a.trackable
+    = link_to a.trackable.name, a.trackable
+    %span= t('views.public_activity.created')
+  - else
+    %span= t('views.public_activity.currently_deleted')
+  -if a.owner
+    %span= t('views.public_activity.by')
+    = link_to a.owner.person.full_name, a.owner

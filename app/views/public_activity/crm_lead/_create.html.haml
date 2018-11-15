@@ -1,0 +1,13 @@
+%li.list-group-item
+  %span.fa.fa-plus
+  %span.fa.fa-flag
+  %small.text-muted= l(a.created_at, format: :long)
+  %br
+  - if a.trackable
+    = link_to a.trackable.person.full_name, a.trackable
+    %span= t('views.public_activity.created')
+  - else
+    %span= t('views.public_activity.currently_deleted')
+  -if a.owner
+    %span= t('views.public_activity.by')
+    = link_to a.owner.person.full_name, a.owner

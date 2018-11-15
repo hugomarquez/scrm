@@ -1,1 +1,1 @@
-= modal('Lookup Account', lookup_crm_accounts_path(format: :json), ['Number', 'Name'], 'accountsLookup', 'account_input', 'account_label', 'accountsDatatable')
+= modal(t('views.crm/accounts.lookup.title'), lookup_crm_accounts_path(format: :json), [t('activerecord.attributes.crm/account.number'), t('activerecord.attributes.crm/account.name')], 'accountsLookup', 'account_input', 'account_label', 'accountsDatatable')

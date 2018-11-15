@@ -1,0 +1,7 @@
+.card
+  .card-header
+    %p.lead= t('views.public_activity.title')
+  .card-block
+    %ul#activities.list-group
+      = render_activity @activities
+    #activityPaginator= paginate @activities, remote: true, param_name: :activity_page

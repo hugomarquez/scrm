@@ -1,0 +1,6 @@
+- if page.current?
+  %li.active
+    = content_tag :a, page, remote: remote, rel: (page.next? ? t('views.pagination.next') : (page.prev? ? t('views.pagination.prev') : nil))
+- else
+  %li
+    = link_to page, url, remote: remote, rel: (page.next? ? t('views.pagination.next') : (page.prev? ? t('views.pagination.prev') : nil))

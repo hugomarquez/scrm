@@ -39,6 +39,8 @@ es:
         title: "Nueva Cuenta"
       form:
         title: "Nueva Cuenta"
+      lookup:
+        title: "Buscar Cuenta"
     crm/contacts:
       index:
         title: "Contactos"
@@ -66,6 +68,19 @@ es:
         title: "Nuevo Prospecto"
       form:
         title: "Nuevo Prospecto"
+    pagination:
+      first: "Primero"
+      truncate: "..."
+      last: "Último"
+      next: "Siguiente"
+      prev: "Anterior"
+      previous: "Anterior"
+    public_activity:
+      title: "Actividades"
+      created: "se agregó"
+      updated: "se editó"
+      by: "por"
+      currently_deleted: "ha sido eliminado"
     sidebar:
       nav:
         accounts: "Cuentas"

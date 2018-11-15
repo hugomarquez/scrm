@@ -19,6 +19,7 @@ class Crm::DealsController < ApplicationController
 
   def edit
     authorize @deal
+    @deal.account_label = @deal.account.name if @deal.account
   end
 
   def create

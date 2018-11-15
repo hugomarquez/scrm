@@ -1,9 +1,3 @@
-%h1 dashboard
 .row
-  .col-sm-6
-    .card
-      .card-header
-        %h2 Activities
-      .card-block
-        %ul
-          = render_activity @activities
+  .col-md-6
+    = render 'public_activity/layout'

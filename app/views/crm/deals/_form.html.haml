@@ -23,7 +23,7 @@
                   %i.fa.fa-search
               = render 'crm/accounts/lookup'
               = f.hidden_field :account_id, id:'account_input'
-              = f.text_field :account_label, id:'account_label', class:'form-control', disabled:true
+              = f.text_field :account_label, id:'account_label', class:'form-control'
       .col-sm-6
         = form_group_for f, :category do
           .col-sm-8

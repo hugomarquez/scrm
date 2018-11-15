@@ -1,0 +1,2 @@
+$('#activities').html('#{escape_javascript render_activity @activities}');
+$('#activityPaginator').html("#{escape_javascript(paginate(@activities, remote: true, param_name: :activity_page))}");
