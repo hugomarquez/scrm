@@ -1,11 +1,11 @@
-var DataTables = (function(){
+var dataTables = (function(){
   // cache DOM
   var $ajax_data_table = $('.ajax-data-table');
   var $data_table = $('.data-table');
   // functions
   function setAjaxDataTable(){
     let language_url = "";
-    if(I18n.get() == "es") {
+    if(i18n.get() == "es") {
       language_url = "/es.json";
     }
     $ajax_data_table.dataTable({

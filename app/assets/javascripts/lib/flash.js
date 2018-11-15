@@ -1,4 +1,4 @@
-var Flash = (function(){
+var flash = (function(){
 
   // Functions
   var search = function() {

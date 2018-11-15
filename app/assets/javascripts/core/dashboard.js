@@ -4,7 +4,7 @@ var dashboard = (function(){
     $('.calendar').each(function(){
       var calendar = $(this);
       calendar.fullCalendar({
-        locale: I18n.get(),
+        locale: i18n.get(),
         header: {
           left: 'prev,next today',
           center: 'title',
