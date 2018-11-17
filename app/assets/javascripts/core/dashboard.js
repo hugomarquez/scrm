@@ -17,10 +17,13 @@ var dashboard = (function(){
     });
   }
 
+
   return{
-    initCalendar:initCalendar,
+    initCalendar : initCalendar
   };
 
 })();
 
-$(document).ready(function(){dashboard.initCalendar();});
+$(document).ready(function(){
+  dashboard.initCalendar();
+});

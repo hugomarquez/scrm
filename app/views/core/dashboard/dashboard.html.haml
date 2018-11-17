@@ -1,3 +1,9 @@
 .row
   .col-md-6
     = render 'public_activity/layout'
+  .col-md-6
+    .card
+      .card-header
+        %p.lead Sales Pipeline
+      .card-block
+        %canvas#pipeline{width:200, height:400}
