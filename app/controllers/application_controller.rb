@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = :es
+    I18n.locale = :en
   end
 
   def user_not_authorized

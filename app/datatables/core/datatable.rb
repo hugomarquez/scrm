@@ -3,7 +3,7 @@ class Core::Datatable
   class MethodNotImplementedError < StandardError; end
 
   attr_reader :view, :options, :sortable_columns, :searchable_columns
-  delegate :params, :h, :link_to, :check_box, :number_to_currency, :current_user, to: :@view
+  delegate :params, :h, :link_to, :check_box, :number_to_currency, :current_core_user, to: :@view
 
   def initialize(view, options = {})
     @view = view
