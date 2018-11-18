@@ -21,7 +21,6 @@
 //= require lib/mousetrap/mousetrap-bind-dictionary.min.js
 //= require lib/sweetalert2.min.js
 //= require lib/pace.min.js
-//= require lib/chart.min.js
 //= require lib/colors.js
 //= require lib/flash.js
 //= require lib/i18n.js

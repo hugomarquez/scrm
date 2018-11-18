@@ -52,7 +52,6 @@ var dashboard = (function(){
         },
       ],
     }
-
     options = {
       legend: {
         display: false
@@ -68,9 +67,32 @@ var dashboard = (function(){
     let chart = new Chart(ctx, {type:"bar", data: data, options: options});
   }
 
+  function funnelChart() {
+    let ctx = document.getElementById("funnel").getContext("2d");
+    var config = {
+        type: 'funnel',
+        data: {
+            datasets: [{
+                data: [10, 35, 90],
+                backgroundColor: colors.getMaterialColors(),
+            }],
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow"
+            ]
+        },
+        options: {
+            sort: 'desc',
+        }
+    };
+    let chart = new Chart(ctx, config);
+  }
+
   return{
     dealChart : dealChart,
-    amountVexpected : amountVexpected
+    amountVexpected : amountVexpected,
+    funnelChart : funnelChart
   };
 
 })();
@@ -78,4 +100,5 @@ var dashboard = (function(){
 $(document).ready(function(){
   dashboard.dealChart();
   dashboard.amountVexpected();
+  dashboard.funnelChart();
 });
