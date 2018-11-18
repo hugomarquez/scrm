@@ -44,10 +44,16 @@ class Crm::Deal < ApplicationRecord
       {
         stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
         amount: d.amount,
-        expected_amount: d.expected_amount,
-        total_stage: d.total_stage
+        expected_revenue: d.expected_amount,
+        total_stage: d.total_stage,
       }
     end
+    @deals.push({
+      labels:{
+        amount: I18n.t("activerecord.attributes.crm/deal.amount"),
+        expected_revenue: I18n.t("activerecord.attributes.crm/deal.expected_revenue")
+      }
+    })
   end
 
   private

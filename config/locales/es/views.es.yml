@@ -21,6 +21,12 @@ es:
           title: "Teclas Especiales"
           show: "Mostrar / Ocultar hoja de atajos"
     core/dashboard:
+      charts:
+        no_data: "No pudimos encontrar ningún dato en este momento ..."
+        deals_by_stage:
+          title: "Oportunidades por etapas"
+        amount_expected:
+          title: "Importe de la oferta frente a los ingresos esperados"
       calendar:
         title: "Calendario"
     core/users:

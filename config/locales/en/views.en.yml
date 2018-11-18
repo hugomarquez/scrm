@@ -22,9 +22,11 @@ en:
           show: "Show/Hide cheatsheet"
     core/dashboard:
       charts:
+        no_data: "We couldn't find any data at the moment..."
         deals_by_stage:
           title: "Deals by stage"
-          no_data: "we couldn't find any data at the moment..."
+        amount_expected:
+          title: "Deal amount vs expected revenue"
       calendar:
         title: "Calendar"
     core/users:

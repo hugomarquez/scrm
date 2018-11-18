@@ -11,14 +11,14 @@
         - if !@deals_by_stage.empty?
           %canvas#dealsByStages{width:100, height:80, data:{deals:@deals_by_stage.to_json}}
         - else
-          %p= t("views.core/dashboard.charts.deals_by_stage.no_data")
+          %p= t("views.core/dashboard.charts.no_data")
 .row
   .col-md-6
     .card
       .card-header
-        %p.lead= t("views.core/dashboard.charts.deals_by_stage.title")
+        %p.lead= t("views.core/dashboard.charts.amount_expected.title")
       .card-block
         - if !@deal_amount_expected.empty?
           %canvas#dealsAmountExpected{width:100, height:80, data:{deals:@deal_amount_expected.to_json}}
         - else
-          %p= t("views.core/dashboard.charts.deals_by_stage.no_data")
+          %p= t("views.core/dashboard.charts.no_data")

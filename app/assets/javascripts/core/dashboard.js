@@ -26,26 +26,27 @@ var dashboard = (function(){
   function amountVexpected(){
     var deals = $("#dealsAmountExpected").data("deals");
     let ctx = document.getElementById("dealsAmountExpected").getContext("2d");
-    let labels = [];
+    let stages = [];
     let expected = [];
     let amount = [];
+    let labels = deals[deals.length -1].labels;
 
-    for(let d in deals) {
-      labels.push(deals[d].stage);
+    for(let d = 0; d < deals.length -1; d++) {
+      stages.push(deals[d].stage);
       amount.push(deals[d].amount);
-      expected.push(deals[d].expected_amount);
+      expected.push(deals[d].expected_revenue);
     }
 
     data = {
-      labels: labels,
+      labels: stages,
       datasets:[
         {
-
+          label: labels.amount,
           data: amount,
           backgroundColor: colors.material.blue
         },
         {
-
+          label: labels.expected_revenue,
           data: expected,
           backgroundColor: colors.material.green
         },
