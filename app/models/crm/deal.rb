@@ -40,20 +40,23 @@ class Crm::Deal < ApplicationRecord
   end
 
   def self.amount_v_expected
-    @deals = Crm::Deal.select("stage, sum(amount) as amount, sum(expected_revenue) as expected_amount, count(stage) as total_stage").group(:stage).map do |d|
-      {
-        stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
-        amount: d.amount,
-        expected_revenue: d.expected_amount,
-        total_stage: d.total_stage,
-      }
+    @sql = Crm::Deal.select("stage, sum(amount) as amount, sum(expected_revenue) as expected_amount, count(stage) as total_stage").group(:stage)
+    @deals = {}
+    if @sql.any?
+      @deals = @sql.map do |d| {
+          stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
+          amount: d.amount,
+          expected_revenue: d.expected_amount,
+          total_stage: d.total_stage,
+        }
+      end
+      @deals.push({
+        labels:{
+          amount: I18n.t("activerecord.attributes.crm/deal.amount"),
+          expected_revenue: I18n.t("activerecord.attributes.crm/deal.expected_revenue")
+        }
+      })
     end
-    @deals.push({
-      labels:{
-        amount: I18n.t("activerecord.attributes.crm/deal.amount"),
-        expected_revenue: I18n.t("activerecord.attributes.crm/deal.expected_revenue")
-      }
-    })
   end
 
   private
