@@ -29,6 +29,27 @@ class Crm::Deal < ApplicationRecord
   attr_accessor :account_label
   before_validation :set_account_label
 
+  def self.by_stage
+    @deals = Crm::Deal.select("probability, stage, count(stage) as total_stage").group(:stage).map do |d|
+      {
+        probability: d.probability,
+        stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
+        total_stage: d.total_stage
+      }
+    end
+  end
+
+  def self.amount_v_expected
+    @deals = Crm::Deal.select("stage, sum(amount) as amount, sum(expected_revenue) as expected_amount, count(stage) as total_stage").group(:stage).map do |d|
+      {
+        stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
+        amount: d.amount,
+        expected_amount: d.expected_amount,
+        total_stage: d.total_stage
+      }
+    end
+  end
+
   private
   def stage_probability
     case self.stage

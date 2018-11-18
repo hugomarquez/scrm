@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   namespace :core, path:'/' do
+
     root to:'dashboard#dashboard'
     get 'calendar', to:'dashboard#calendar'
+
+
     devise_for :users, class_name:'Core::User', module: :devise, skip:[:registrations]
+
 
     resources :users, class_name:'Core::User', except:[:destroy] do
       get 'send_invite', on: :member
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   namespace :crm, path: '/sales' do
+    
     resources :accounts, class_name:'Crm::Account' do
       collection do
         get 'home'

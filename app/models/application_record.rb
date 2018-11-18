@@ -6,5 +6,5 @@ class ApplicationRecord < ActiveRecord::Base
   def uid
     slug || SecureRandom.urlsafe_base64(5, false)
   end
-  
+
 end

@@ -16,4 +16,5 @@ Rails.application.config.assets.precompile += %w(
   lib/chart.min.js
   lib/lookup.js
   core/dashboard.js
+  core/calendar.js
 )

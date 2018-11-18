@@ -4,7 +4,6 @@ var i18n = (function(){
   var get = function() {
     return $("html").attr("lang");
   }
-
   return{
     get : get
   };
