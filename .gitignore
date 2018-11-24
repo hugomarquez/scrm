@@ -37,3 +37,4 @@
 Gemfile.lock
 
 .DS_Store
+.erdconfig
