@@ -1,14 +1,17 @@
 class Crm::ContactsController < ApplicationController
   before_action :set_contact, only:[:edit, :show, :update, :destroy]
-
-  def home
-    @recent_contacts = Crm::Contact.recent
-  end
-
+  
   def index
     respond_to do |format|
       format.html
       format.json { render json: Crm::ContactDatatable.new(view_context) }
+    end
+  end
+
+  #TODO: Implement this on an api controller with user - api token authentication
+  def lookup
+    respond_to do |format|
+      format.json { render json: Crm::ContactLookup.new(view_context) }
     end
   end
 
@@ -54,7 +57,7 @@ class Crm::ContactsController < ApplicationController
     if contact_params[:account_label].blank?
       @contact.account = nil
     end
-    
+
     if @contact.valid?
       @contact.save
       flash[:success] = t('controllers.crm/contacts.update.success')

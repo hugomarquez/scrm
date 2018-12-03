@@ -2,6 +2,13 @@ es:
   controllers:
     application:
       not_authorized: "No esta autorizado para realizar esta acción."
+    core/tasks:
+      create:
+        success: "¡Tarea creada exitosamente!"
+      update:
+        success: "¡Tarea actualizada exitosamente!"
+      destroy:
+        success: "¡Tarea eliminada con éxito!"
     crm/accounts:
       create:
         success: "¡Cuenta creada exitosamente!"

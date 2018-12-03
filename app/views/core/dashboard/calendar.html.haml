@@ -4,6 +4,11 @@
   .col-sm-12
     .card
       .card-header
-        %h2= t('views.core/dashboard.calendar.title')
+        %p.lead= t('views.core/dashboard.calendar.title')
+        .card-actions
+          = link_to core_tasks_path, class:'btn btn-default' do
+            %i.fa.fa-list
+          = link_to new_core_task_path, class:'btn btn-default' do
+            %i.fa.fa-plus
       .card-block
         .calendar

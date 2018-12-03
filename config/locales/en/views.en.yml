@@ -36,6 +36,13 @@ en:
         title: "Edit User"
       new:
         title: "New User"
+      lookup:
+        title: "Lookup User"
+    core/tasks:
+      index:
+        title: "Tasks"
+      new:
+        title: "New Event"
     crm/accounts:
       index:
         title: "Accounts"
@@ -56,6 +63,8 @@ en:
         title: "New Contact"
       form:
         title: "New Contact"
+      lookup:
+        title: "Lookup Contact"
     crm/deals:
       index:
         title: "Deals"
@@ -65,6 +74,8 @@ en:
         title: "New Deal"
       form:
         title: "New Deal"
+      lookup:
+        title: "Lookup Deal"
     crm/leads:
       index:
         title: "Leads"
@@ -74,6 +85,8 @@ en:
         title: "New Lead"
       form:
         title: "New Lead"
+      lookup:
+        title: "Lookup Lead"
     pagination:
       first: "First"
       truncate: "..."

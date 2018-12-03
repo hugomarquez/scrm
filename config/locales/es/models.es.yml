@@ -13,6 +13,9 @@ es:
       core/user:
         one: "Usuario"
         other: "Usuarios"
+      core/task:
+        one: "Tarea"
+        other: "Tareas"
       crm/account:
         one: "Cuenta"
         other: "Cuentas"
@@ -61,6 +64,30 @@ es:
         password: "Contraseña"
         password_confirmation: "Confirmación de Contraseña"
         remember_me: "Recuerdarme"
+      core/task:
+        assigned_to: "Asignado a"
+        related_to: "Relacionado a"
+        subject: "Asunto"
+        description: "Descripción"
+        location: "Ubicación"
+        color: "Color"
+        all_day: "Todo el día"
+        starts_at: "Fecha de Inicio"
+        ends_at: "Fecha Fin"
+        status: "Estatus"
+        statuses_options:
+          not_started: "No empezado"
+          in_progress: "En progreso"
+          completed: "Completado"
+          waiting: "Esperando"
+          deferred: "Diferido"
+        priority: "Prioridad"
+        priorities_options:
+          high: "Alta"
+          normal: "Normal"
+          low: "Baja"
+        created_at: "Creado al"
+        updated_at: "Actualizado al"
       crm/account:
         name: "Nombre de Cuenta"
         number: "Folio"

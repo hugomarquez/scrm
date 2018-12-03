@@ -1,5 +1,35 @@
 module LookupHelper
 
+  def select_for_lookup(form, field, options={})
+    klass = form.object.class
+    id = options[:id].blank? ? 'polymorphic_select' : options[:id]
+    form.select(
+      field,
+      t_models.collect{|s| [s[1][:one], s[0].to_s.classify ] },
+      {},
+      class:'form-control',
+      id: id
+    )
+  end
+
+  def t_models
+    I18n.t("activerecord.models").select do |a|
+      a.to_s.match(/^crm/) and
+      a.to_s.exclude?('crm/task')
+    end
+  end
+
+  def polymorphic_link_to(model)
+    case model.class.to_s
+    when 'Crm::Account'
+      link_to model.name, model
+    when 'Crm::Contact'
+      link_to model.person.full_name, model
+    when 'Crm::Lead'
+      link_to model.company, model
+    end
+  end
+
   def model_datatable(route, fields, id)
     content_tag(
       :table,

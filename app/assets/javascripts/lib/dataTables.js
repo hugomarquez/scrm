@@ -27,18 +27,7 @@ var dataTables = (function(){
     });
     $('.table').parent().addClass('table-responsive');
   }
-
-  function setDataTable(){
-    $data_table.dataTable({
-      sPaginationType: "full_numbers",
-      bJQueryUI: true,
-      language: {
-        url: '/localisation/fr_FR.json'
-      }
-    });
-  }
-
-  setDataTable();
+  
   setAjaxDataTable();
   return{};
 })();

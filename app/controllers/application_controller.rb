@@ -13,6 +13,27 @@ class ApplicationController < ActionController::Base
     current_core_user
   end
 
+  def polymorphic_builder(related_to, polymorphic_type, polymorphic_id)
+    if !related_to.blank? && polymorphic_id.blank?
+      @klass = polymorphic_type.constantize
+      if @klass.reflect_on_association(:person).respond_to?(:name)
+        @collection = @klass.joins(:person)
+          .where("core_people.first_name Like :name OR core_people.last_name LIKE :name",
+            name: related_to).first
+
+        @collection.id if @collection
+
+      elsif @klass.attribute_names.include?("name")
+        @collection = @klass.where('name LIKE :name', name: related_to).first
+        @collection.id if @collection
+      end
+    elsif related_to.blank? && !polymorphic_id.blank?
+      ""
+    else
+      polymorphic_id
+    end
+  end
+
   private
 
   # Overwriting the sign_out redirect path method
@@ -21,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = :en
+    I18n.locale = :es
   end
 
   def user_not_authorized

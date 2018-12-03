@@ -1,10 +1,6 @@
 class Crm::AccountsController < ApplicationController
   before_action :set_account, only:[:edit, :show, :update, :destroy]
-
-  def home
-    @accounts = Crm::Account.recent
-  end
-
+  
   def index
     respond_to do |format|
       format.html

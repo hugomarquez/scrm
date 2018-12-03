@@ -1,14 +1,17 @@
 class Crm::LeadsController < ApplicationController
   before_action :set_lead, only:[:clone, :convert, :edit, :show, :update, :destroy]
-
-  def home
-    @recent_leads = Crm::Lead.recent
-  end
-
+  
   def index
     respond_to do |format|
       format.html
       format.json { render json: Crm::LeadDatatable.new(view_context) }
+    end
+  end
+
+  #TODO: Implement this on an api controller with user - api token authentication
+  def lookup
+    respond_to do |format|
+      format.json { render json: Crm::LeadLookup.new(view_context) }
     end
   end
 

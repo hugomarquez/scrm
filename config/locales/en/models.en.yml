@@ -13,6 +13,9 @@ en:
       core/user:
         one: "User"
         other: "Users"
+      core/task:
+        one: "Task"
+        other: "Tasks"
       crm/account:
         one: "Account"
         other: "Accounts"
@@ -61,6 +64,30 @@ en:
         password: "Password"
         password_confirmation: "Password Confirmation"
         remember_me: "Remember me"
+      core/task:
+        assigned_to: "Assigned to"
+        related_to: "Related to"
+        subject: "Subject"
+        description: "Description"
+        location: "Location"
+        color: "Color"
+        all_day: "All day"
+        starts_at: "Starts at"
+        ends_at: "Ends at"
+        status: "Status"
+        statuses_options:
+          not_started: "Not started"
+          in_progress: "In progress"
+          completed: "Completed"
+          waiting: "Waiting"
+          deferred: "Deferred"
+        priority: "Priority"
+        priorities_options:
+          high: "High"
+          normal: "Normal"
+          low: "Low"
+        created_at: "Created at"
+        updated_at: "Updated at"
       crm/account:
         name: "Account Name"
         number: "Number"

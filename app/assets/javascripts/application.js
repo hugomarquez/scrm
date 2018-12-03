@@ -48,4 +48,11 @@ $(document).ready(function(){
     'c l': function() { window.location.href = $('#sLeads').attr('href') + '/new'; },
     'c m': function() { window.location.href = $('#sDeals').attr('href') + '/new'; },
   });
+
+  // Initialize Chosen
+  $('.chosen-select').chosen({
+    no_results_text: "Oops, nothing found!",
+    width: "100%",
+    allow_single_deselect: true
+  });
 });

@@ -13,10 +13,11 @@ var calendar = (function(){
         selectable: true,
         selectHelper: true,
         eventLimit: true,
+        events:'/tasks.json'
       });
     });
   }
-  
+
   return{
     init : init
   };

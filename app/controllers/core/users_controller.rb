@@ -8,6 +8,13 @@ class Core::UsersController < ApplicationController
     end
   end
 
+  #TODO: Implement this on an api controller with user - api token authentication
+  def lookup
+    respond_to do |format|
+      format.json { render json: Core::UserLookup.new(view_context) }
+    end
+  end
+
   def new
     @user = Core::User.new
     @user.build_person

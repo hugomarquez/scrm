@@ -8,6 +8,13 @@ class Crm::DealsController < ApplicationController
     end
   end
 
+  #TODO: Implement this on an api controller with user - api token authentication
+  def lookup
+    respond_to do |format|
+      format.json { render json: Crm::DealLookup.new(view_context) }
+    end
+  end
+
   def new
     @deal = Crm::Deal.new
     authorize @deal

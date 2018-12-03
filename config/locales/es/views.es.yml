@@ -36,6 +36,13 @@ es:
         title: "Editar usuario"
       new:
         title: "Nuevo usuario"
+      lookup:
+        title: "Buscar Usuario"
+    core/tasks:
+      index:
+        title: "Tareas"
+      new:
+        title: "Nueva Tarea"
     crm/accounts:
       index:
         title: "Cuentas"
@@ -56,6 +63,8 @@ es:
         title: "Nuevo Contacto"
       form:
         title: "Nuevo Contacto"
+      lookup:
+        title: "Buscar Contacto"
     crm/deals:
       index:
         title: "Oportunidades"
@@ -65,6 +74,8 @@ es:
         title: "Nueva Oportunidad"
       form:
         title: "Nueva Oportunidad"
+      lookup:
+        title: "Buscar Oportunidad"
     crm/leads:
       index:
         title: "Prospectos"
@@ -74,6 +85,8 @@ es:
         title: "Nuevo Prospecto"
       form:
         title: "Nuevo Prospecto"
+      lookup:
+        title: "Buscar Prospecto"
     pagination:
       first: "Primero"
       truncate: "..."
