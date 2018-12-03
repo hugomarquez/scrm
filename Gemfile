@@ -39,7 +39,6 @@ gem 'kaminari', '~> 1.1.1'
 gem 'breadcrumbs_on_rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 # Use Redis adapter to run Action Cable in production

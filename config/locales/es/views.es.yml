@@ -116,6 +116,7 @@ es:
         deals: "Oportunidades"
         users: "Usuarios"
     shared:
+      brand: "SCRM"
       save: "Guardar"
       cancel: "Cancelar"
       edit: "Editar"

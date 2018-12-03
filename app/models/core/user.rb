@@ -3,7 +3,7 @@ class Core::User < ApplicationRecord
   extend FriendlyId
 
   friendly_id :uid, use: :slugged
-
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :confirmable,

@@ -116,6 +116,7 @@ en:
         deals: "Deals"
         users: "Users"
     shared:
+      brand: "SCRM"
       save: "Save"
       cancel: "Cancel"
       edit: "Edit"

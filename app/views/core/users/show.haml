@@ -13,28 +13,35 @@
       %tr
         %th=t('activerecord.attributes.core/person.full_name')
         %td= @user.person.full_name
-        %th=t('activerecord.attributes.core/user.email')
-        %td= @user.email
-      %tr
-        %th=t('activerecord.attributes.core/user.department')
-        %td= @user.department
-        %th=t('activerecord.attributes.core/user.company')
-        %td= @user.company
-      %tr
-        %th=t('activerecord.attributes.core/user.start_of_day')
-        %td= @user.start_of_day
-        %th=t('activerecord.attributes.core/user.end_of_day')
-        %td= @user.end_of_day
-      %tr
         %th=t('activerecord.attributes.core/user.username')
         %td= @user.username
+      %tr
+        %th=t('activerecord.attributes.core/user.email')
+        %td= @user.email
+        %th=t('activerecord.attributes.core/person.mobile')
+        %td= @user.person.mobile
       %tr
         %th=t('activerecord.attributes.core/person.phone')
         %td= @user.person.phone
         %th=t('activerecord.attributes.core/person.extension')
         %td= @user.person.extension
       %tr
-        %th=t('activerecord.attributes.core/person.mobile')
-        %td= @user.person.mobile
+        %th=t('activerecord.attributes.core/user.company')
+        %td= @user.company
+        %th=t('activerecord.attributes.core/user.department')
+        %td= @user.department
+      %tr
+        %th=t('activerecord.attributes.core/user.division')
+        %td= @user.division
+        %th
+        %td
+      %tr
+        %th=t('activerecord.attributes.core/user.start_of_day')
+        %td= @user.start_of_day
+        %th=t('activerecord.attributes.core/user.end_of_day')
+        %td= @user.end_of_day
+      %tr
         %th=t('activerecord.attributes.core/person.birthdate')
         %td= @user.person.birthdate
+        %th
+        %td

@@ -57,6 +57,7 @@ en:
       core/user:
         role: "Role"
         department: "Department"
+        division: "Division"
         company: "Company"
         start_of_day: "Start of Day"
         end_of_day: "End of Day"

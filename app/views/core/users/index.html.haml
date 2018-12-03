@@ -10,5 +10,7 @@
     %table.table.table-striped.table-bordered.ajax-data-table{width:'100%', cellspacing:'0', data:{source: core_users_path(format: :json)}}
       %thead
         %tr
-          %th Email
+          %th=t('activerecord.attributes.core/user.username')
+          %th=t('activerecord.attributes.core/person.full_name')
+          %th=t('activerecord.attributes.core/user.email')
       %tbody

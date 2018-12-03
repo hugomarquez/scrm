@@ -7,9 +7,9 @@
         %span.icon-bar
         %span.icon-bar
       - if current_core_user
-        = link_to 'SCRM', core_root_path, class:'navbar-brand'
+        = link_to t('views.shared.brand'), core_root_path, class:'navbar-brand'
       -else
-        = link_to 'SCRM', home_path, class:'navbar-brand'
+        = link_to t('views.shared.brand'), home_path, class:'navbar-brand'
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         - if current_core_user
