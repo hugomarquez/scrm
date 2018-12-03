@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
     root to:'dashboard#dashboard'
     get 'calendar', to:'dashboard#calendar'
+    delete 'destroy_activities', to:'dashboard#destroy_activities'
     resources :tasks, class_name:'Core::Task', except:[:show]
+    resources :notes, class_name:'Core::Note'
 
     devise_for :users, class_name:'Core::User', module: :devise, skip:[:registrations]
 

@@ -1,0 +1,5 @@
+$('#tasks').html('#{escape_javascript render("core/tasks/task", tasks: @tasks)}');
+$('#taskPaginator').html("#{escape_javascript(paginate(@tasks, remote: true, param_name: :task_page))}");
+
+$('#notes').html('#{escape_javascript render("core/notes/note", notes: @notes)}');
+$('#notePaginator').html("#{escape_javascript(paginate(@notes, remote: true, param_name: :note_page))}");

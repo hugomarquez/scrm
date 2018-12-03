@@ -1,0 +1,19 @@
+.card
+  .card-header
+    %p.lead= t('views.core/tasks.index.title')
+    .card-actions
+      = link_to new_core_task_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th
+          %th=t('activerecord.attributes.core/task.assigned_to')
+          %th=t('activerecord.attributes.core/task.subject')
+          %th=t('activerecord.attributes.core/task.description')
+          %th=t('activerecord.attributes.core/task.starts_at')
+          %th=t('activerecord.attributes.core/task.ends_at')
+      %tbody#tasks
+        = render 'core/tasks/task', tasks: tasks
+    #taskPaginator= paginate @tasks, remote: true, param_name: :task_page

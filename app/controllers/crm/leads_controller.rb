@@ -1,6 +1,6 @@
 class Crm::LeadsController < ApplicationController
   before_action :set_lead, only:[:clone, :convert, :edit, :show, :update, :destroy]
-  
+
   def index
     respond_to do |format|
       format.html
@@ -66,6 +66,8 @@ class Crm::LeadsController < ApplicationController
 
   def show
     authorize @lead
+    @tasks = @lead.tasks.page(params[:task_page]).per(5)
+    @notes = @lead.notes.page(params[:note_page]).per(5)
   end
 
   def edit

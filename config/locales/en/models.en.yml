@@ -35,6 +35,7 @@ en:
         body: "Body"
         related_to: "Related to"
         created_by: "Created by"
+        private: "Private"
       core/organization:
         name: "Company Name"
         phone: "Phone"

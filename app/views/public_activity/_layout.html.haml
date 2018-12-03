@@ -1,6 +1,9 @@
 .card
   .card-header
     %p.lead= t('views.public_activity.title')
+    .card-actions
+      = link_to core_destroy_activities_path, method: :delete, data:{confirm: t('views.shared.delete_message')}, class:'btn btn-danger' do
+        %i.fa.fa-trash
   .card-block
     %ul#activities.list-group
       = render_activity @activities

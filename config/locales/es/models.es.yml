@@ -35,6 +35,7 @@ es:
         body: "Cuerpo"
         related_to: "Relacionado a"
         created_by: "Creado por"
+        private: "Privado"
       core/organization:
         name: "Nombre de Compañía"
         phone: "Teléfono"

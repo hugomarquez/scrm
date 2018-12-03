@@ -4,6 +4,8 @@ class Crm::LeadLookup < Core::Datatable
   def sortable_columns
     @sortable_columns ||= %w(
       Crm::Lead.number
+      Core::Person.first_name
+      Core::Person.last_name
       Crm::Lead.company
     )
   end
@@ -11,6 +13,8 @@ class Crm::LeadLookup < Core::Datatable
   def searchable_columns
     @searchable_columns ||= %w(
       Crm::Lead.number
+      Core::Person.first_name
+      Core::Person.last_name
       Crm::Lead.company
     )
   end
@@ -25,6 +29,12 @@ class Crm::LeadLookup < Core::Datatable
           data:{resource: record.id, label: record.number}
         ),
         link_to(
+          record.person.full_name,
+          'javascript:void(0)',
+          onclick:"lookup.start(this)",
+          data:{resource: record.id, label: record.person.full_name}
+        ),
+        link_to(
           record.company,
           'javascript:void(0)',
           onclick:"lookup.start(this)",
@@ -35,6 +45,6 @@ class Crm::LeadLookup < Core::Datatable
   end
 
   def get_raw_records
-    Crm::Lead
+    Crm::Lead.includes(:person).references(:person).distinct
   end
 end

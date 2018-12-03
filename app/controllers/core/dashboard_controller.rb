@@ -7,4 +7,10 @@ class Core::DashboardController < ApplicationController
 
   def calendar
   end
+
+  def destroy_activities
+    @activities = PublicActivity::Activity.where(owner: current_user)
+    @activities.destroy_all
+    redirect_to core_root_path
+  end
 end

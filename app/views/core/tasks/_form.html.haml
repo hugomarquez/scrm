@@ -65,6 +65,5 @@
   .row
     .form-group
       .text-center.col-sm-12
-        = f.submit t('views.shared.save'), class: 'btn btn-success'
-        = link_to t('views.shared.cancel'), :back, class: 'btn btn-warning'
-        = link_to t('views.shared.delete'), core_task_path(@task), class:'btn btn-danger', method: :delete, data:{confirm: t('views.shared.delete_message')}
+        = f.submit t('views.shared.save'), class: 'btn btn-sm btn-primary'
+        = link_to t('views.shared.cancel'), :back, class: 'btn btn-sm btn-danger'

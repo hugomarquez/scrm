@@ -56,4 +56,9 @@
         %td= l(@lead.updated_at, format: :short)
       %tr
         %th=t('activerecord.attributes.crm/lead.created_by')
-        %td= @lead.created_by.person.full_name if @lead.created_by && @lead.created_by.person
+        %td= link_to @lead.created_by.person.full_name, @lead.created_by if @lead.created_by && @lead.created_by.person
+        %th
+        %td
+
+= render 'core/tasks/tasks_widget', tasks: @tasks
+= render 'core/notes/notes_widget', notes: @notes

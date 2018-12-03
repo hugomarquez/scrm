@@ -1,0 +1,7 @@
+- contacts.each do |contact|
+  %tr
+    %td
+      = link_to t('views.shared.edit'), edit_crm_contact_path(contact)
+    %td= link_to contact.person.full_name, contact
+    %td= contact.person.email
+    %td= contact.created_by.person.full_name

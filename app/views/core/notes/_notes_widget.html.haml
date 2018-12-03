@@ -1,0 +1,20 @@
+.card
+  .card-header
+    %p.lead= t('views.core/notes.index.title')
+    .card-actions
+      = link_to new_core_note_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    - if notes.empty?
+      %p= t('views.shared.no_data')
+    - else
+      %table.table.table-condensed.table-striped.table-hover
+        %thead
+          %th.col-xs-2
+          %th.col-xs-2= t('activerecord.attributes.core/note.private')
+          %th= t('activerecord.attributes.core/note.title')
+          %th= t('activerecord.attributes.core/note.related_to')
+          %th= t('activerecord.attributes.core/note.created_by')
+        %tbody#notes
+          = render 'core/notes/note', notes: notes
+    #notePaginator= paginate @notes, remote: true, param_name: :note_page

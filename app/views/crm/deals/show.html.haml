@@ -22,9 +22,9 @@
         %td
       %tr
         %th=t('activerecord.attributes.crm/deal.amount')
-        %td= @deal.amount
+        %td= number_to_currency @deal.amount
         %th=t('activerecord.attributes.crm/deal.expected_revenue')
-        %td= @deal.expected_revenue
+        %td= number_to_currency @deal.expected_revenue
       %tr
         %th=t('activerecord.attributes.crm/deal.category')
         %td=t("activerecord.attributes.crm/deal.categories_options.#{@deal.category}")
@@ -46,11 +46,6 @@
         %th=t('activerecord.attributes.crm/deal.updated_at')
         %td= l(@deal.updated_at, format: :short)
       %tr
-        %th=t('activerecord.attributes.crm/deal.created_by')
-        %td= @deal.created_by.person.full_name
-        %td
-        %td
-      %tr
         %th=t('activerecord.attributes.crm/deal.delivery_status')
         %td= @deal.delivery_status
         %th=t('activerecord.attributes.crm/deal.tracking_number')
@@ -58,3 +53,13 @@
       %tr
         %th=t('activerecord.attributes.crm/deal.description')
         %td= @deal.description
+        %th
+        %td
+      %tr
+        %th=t('activerecord.attributes.crm/deal.created_by')
+        %td= link_to @deal.created_by.person.full_name, @deal.created_by if @deal.created_by
+        %td
+        %td
+
+= render 'core/tasks/tasks_widget', tasks: @tasks
+= render 'core/notes/notes_widget', notes: @notes

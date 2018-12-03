@@ -1,0 +1,10 @@
+- deals.each do |deal|
+  %tr
+    %td
+      = link_to t('views.shared.edit'), edit_crm_deal_path(deal)
+    %td= link_to deal.name, deal
+    %td= t("activerecord.attributes.crm/deal.stages_options.#{deal.stage}")
+    %td= number_to_currency deal.amount
+    %td= number_to_currency deal.expected_revenue
+    %td= deal.close_at
+    %td= link_to deal.created_by.person.full_name, deal.created_by if deal.created_by

@@ -1,6 +1,6 @@
 class Crm::ContactsController < ApplicationController
   before_action :set_contact, only:[:edit, :show, :update, :destroy]
-  
+
   def index
     respond_to do |format|
       format.html
@@ -28,6 +28,8 @@ class Crm::ContactsController < ApplicationController
 
   def show
     authorize @contact
+    @tasks = @contact.tasks.page(params[:task_page]).per(5)
+    @notes = @contact.notes.page(params[:note_page]).per(5)
   end
 
   def create

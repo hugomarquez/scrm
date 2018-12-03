@@ -22,13 +22,19 @@ en:
           show: "Show/Hide cheatsheet"
     core/dashboard:
       charts:
-        no_data: "We couldn't find any data at the moment..."
         deals_by_stage:
           title: "Deals by stage"
         amount_expected:
           title: "Deal amount vs expected revenue"
       calendar:
         title: "Calendar"
+    core/notes:
+      index:
+        title: "Notes"
+      edit:
+        title: "Edit Note"
+      new:
+        title: "New Note"
     core/users:
       index:
         title: "Users"
@@ -119,3 +125,4 @@ en:
         recently_viewed: "Recently Viewed"
         recently_created: "Recently Created"
       delete_message: "Are you sure you want to delete this?"
+      no_data: "We couldn't find any data at the moment..."

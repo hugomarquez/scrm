@@ -1,0 +1,8 @@
+$('#contacts').html('#{escape_javascript render("crm/contacts/contact", contacts: @contacts)}');
+$('#contactPaginator').html("#{escape_javascript(paginate(@contacts, remote: true, param_name: :contact_page))}");
+
+$('#tasks').html('#{escape_javascript render("core/tasks/task", tasks: @tasks)}');
+$('#taskPaginator').html("#{escape_javascript(paginate(@tasks, remote: true, param_name: :task_page))}");
+
+$('#notes').html('#{escape_javascript render("core/notes/note", notes: @notes)}');
+$('#notePaginator').html("#{escape_javascript(paginate(@notes, remote: true, param_name: :note_page))}");

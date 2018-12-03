@@ -1,0 +1,22 @@
+.card
+  .card-header
+    %p.lead= t('views.crm/deals.index.title')
+    .card-actions
+      = link_to new_crm_deal_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    - if deals.empty?
+      %p= t('views.shared.no_data')
+    - else
+      %table.table.table-condensed.table-striped.table-hover
+        %thead
+          %th.col-xs-2
+          %th= t('activerecord.attributes.crm/deal.name')
+          %th= t('activerecord.attributes.crm/deal.stage')
+          %th= t('activerecord.attributes.crm/deal.amount')
+          %th= t('activerecord.attributes.crm/deal.expected_revenue')
+          %th= t('activerecord.attributes.crm/deal.close_at')
+          %th= t('activerecord.attributes.crm/deal.created_by')
+        %tbody#deals
+          = render 'crm/deals/deal', deals: deals
+    #dealPaginator= paginate deals, remote: true, param_name: :deal_page

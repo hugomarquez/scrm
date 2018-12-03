@@ -1,11 +1,11 @@
 class Crm::AccountLookup < Core::Datatable
 
   def sortable_columns
-    @sortable_columns ||= %w(Crm::Account.number Crm::Account.name)
+    @sortable_columns ||= %w(Crm::Account.number Crm::Account.name Crm::Account.email)
   end
 
   def searchable_columns
-    @searchable_columns ||= %w(Crm::Account.number Crm::Account.name)
+    @searchable_columns ||= %w(Crm::Account.number Crm::Account.name Crm::Account.email)
   end
 
   def data
@@ -22,6 +22,12 @@ class Crm::AccountLookup < Core::Datatable
           'javascript:void(0)',
           onclick:"lookup.start(this)",
           data:{resource: record.id, label: record.name}
+        ),
+        link_to(
+          record.email,
+          'javascript:void(0)',
+          onclick:"lookup.start(this)",
+          data:{resource: record.id, label: record.email}
         )
       ]
     end

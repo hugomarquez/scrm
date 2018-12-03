@@ -22,6 +22,8 @@ class Crm::DealsController < ApplicationController
 
   def show
     authorize @deal
+    @tasks = @deal.tasks.page(params[:task_page]).per(5)
+    @notes = @deal.notes.page(params[:note_page]).per(5)
   end
 
   def edit

@@ -1,0 +1,10 @@
+- notes.each do |note|
+  %tr
+    %td
+      = link_to t('views.shared.edit'), edit_core_note_path(note)
+      |
+      = link_to t('views.shared.delete'), core_note_path(note), method: :delete, data:{confirm: t('views.shared.delete_message')}
+    %td= check_box_tag(note.id, note.id, note.private, disabled: true)
+    %td= note.title
+    %td= polymorphic_link_to(note.noteable)
+    %td= note.created_by.person.full_name if note.created_by

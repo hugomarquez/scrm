@@ -4,6 +4,8 @@ class Crm::ContactLookup < Core::Datatable
   def sortable_columns
     @sortable_columns ||= %w(
       Crm::Contact.number
+      Core::Person.first_name
+      Core::Person.last_name
       Core::Person.email
     )
   end
@@ -11,6 +13,8 @@ class Crm::ContactLookup < Core::Datatable
   def searchable_columns
     @searchable_columns ||= %w(
       Crm::Contact.number
+      Core::Person.first_name
+      Core::Person.last_name
       Core::Person.email
     )
   end
@@ -23,6 +27,18 @@ class Crm::ContactLookup < Core::Datatable
           'javascript:void(0)',
           onclick:"lookup.start(this)",
           data:{resource: record.id, label: record.number}
+        ),
+        link_to(
+          record.person.first_name,
+          'javascript:void(0)',
+          onclick:"lookup.start(this)",
+          data:{resource: record.id, label: record.person.first_name}
+        ),
+        link_to(
+          record.person.last_name,
+          'javascript:void(0)',
+          onclick:"lookup.start(this)",
+          data:{resource: record.id, label: record.person.last_name}
         ),
         link_to(
           record.person.email,

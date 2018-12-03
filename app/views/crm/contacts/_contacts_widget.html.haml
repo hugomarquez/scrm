@@ -1,0 +1,19 @@
+.card
+  .card-header
+    %p.lead= t('views.crm/contacts.index.title')
+    .card-actions
+      = link_to new_crm_contact_path, class:'btn btn-default' do
+        %i.fa.fa-plus
+  .card-block
+    - if contacts.empty?
+      %p= t('views.shared.no_data')
+    - else
+      %table.table.table-condensed.table-striped.table-hover
+        %thead
+          %th.col-xs-2
+          %th= t('activerecord.attributes.core/person.full_name')
+          %th= t('activerecord.attributes.core/person.email')
+          %th= t('activerecord.attributes.crm/contact.created_by')
+        %tbody#contacts
+          = render 'crm/contacts/contact', contacts: contacts
+    #contactPaginator= paginate contacts, remote: true, param_name: :contact_page

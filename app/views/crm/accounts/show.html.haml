@@ -57,6 +57,10 @@
         %td= @account.updated_at.strftime("%m/%d/%Y - %l:%M%p")
       %tr
         %th=t('activerecord.attributes.crm/account.created_by')
-        %td= @account.created_by.person.full_name
+        %td= link_to @account.created_by.person.full_name, @account.created_by if @account.created_by
         %th
         %td
+= render 'crm/contacts/contacts_widget', contacts: @contacts
+= render 'crm/deals/deals_widget', deals: @deals
+= render 'core/tasks/tasks_widget', tasks: @tasks
+= render 'core/notes/notes_widget', notes: @notes

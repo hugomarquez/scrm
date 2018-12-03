@@ -1,0 +1,36 @@
+-content_for :javascripts do
+  = javascript_include_tag 'lib/lookup'
+
+= form_for @note, html:{class:'form-horizontal'} do |f|
+  .row
+    .col-sm-6
+      = form_group_for f, :related_to do
+        .col-sm-8
+          .input-group
+            %span.input-group-bt
+              = select_for_lookup(f, :noteable_type)
+              = f.hidden_field :noteable_id, value:"", id:'noteable_id_input'
+            .input-group-btn
+              %a.btn.btn-default#relatedToBtn{data:{toggle:'modal', target:'#accountsLookup'}}
+                %i.fa.fa-search
+            = f.text_field :related_to, id:'related_to_label', class:'form-control'
+    .col-sm-6
+      = form_group_for f, :private do
+        .checkbox.col-sm-2.col-xs-offset-1
+          = f.check_box :private
+  .row
+    .col-sm-6
+      = form_group_for f, :title do
+        .col-sm-8
+          .input-line
+            = f.text_field :title, class:'form-control'
+    .col-sm-6
+      = form_group_for f, :body do
+        .col-sm-8
+          .input-line
+            = f.text_area :body, class:'form-control'
+  .row
+    .form-group
+      .text-center.col-sm-12
+        = f.submit t('views.shared.save'), class: 'btn btn-success'
+        = link_to t('views.shared.cancel'), :back, class: 'btn btn-danger'

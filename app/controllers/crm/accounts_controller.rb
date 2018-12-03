@@ -1,6 +1,6 @@
 class Crm::AccountsController < ApplicationController
   before_action :set_account, only:[:edit, :show, :update, :destroy]
-  
+
   def index
     respond_to do |format|
       format.html
@@ -22,6 +22,10 @@ class Crm::AccountsController < ApplicationController
 
   def show
     authorize @account
+    @deals = @account.deals.includes(:created_by).page(params[:deal_page]).per(5)
+    @contacts = @account.contacts.includes(:person, :created_by).page(params[:contact_page]).per(5)
+    @tasks = @account.tasks.page(params[:task_page]).per(5)
+    @notes = @account.notes.page(params[:note_page]).per(5)
   end
 
   def edit

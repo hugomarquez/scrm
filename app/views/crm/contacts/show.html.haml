@@ -52,6 +52,8 @@
         %td= l(@contact.updated_at, format: :short)
       %tr
         %th=t('activerecord.attributes.crm/contact.created_by')
-        %td= @contact.created_by.person.full_name
+        %td= link_to @contact.created_by.person.full_name, @contact.created_by if @contact.created_by
         %th
         %td
+= render 'core/tasks/tasks_widget', tasks: @tasks
+= render 'core/notes/notes_widget', notes: @notes

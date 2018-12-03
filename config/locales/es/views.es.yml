@@ -22,13 +22,19 @@ es:
           show: "Mostrar / Ocultar hoja de atajos"
     core/dashboard:
       charts:
-        no_data: "No pudimos encontrar ningún dato en este momento ..."
         deals_by_stage:
           title: "Oportunidades por etapas"
         amount_expected:
           title: "Importe de la oferta frente a los ingresos esperados"
       calendar:
         title: "Calendario"
+    core/notes:
+      index:
+        title: "Notas"
+      edit:
+        title: "Editar Nota"
+      new:
+        title: "Nueva Nota"
     core/users:
       index:
         title: "Usuarios"
@@ -119,3 +125,4 @@ es:
         recently_viewed: "Recientemente Visto"
         recently_created: "Recientemente Creado"
       delete_message: "¿Está seguro que quiere eliminar esto?"
+      no_data: "No pudimos encontrar ningún dato en este momento ..."
