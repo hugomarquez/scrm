@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
 
   create_table "core_users", force: :cascade do |t|
     t.string "slug"
-    t.string "theme"
     t.integer "role", default: 0, null: false
     t.boolean "can_export", default: false, null: false
     t.string "username"

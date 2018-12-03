@@ -9,7 +9,7 @@ class Core::User < ApplicationRecord
   devise :invitable, :database_authenticatable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: [:user, :admin, :account_owner]
+  enum role:  [:user, :admin, :account_owner]
 
   validates :authentication_token, uniqueness: true
   before_save :ensure_authentication_token!

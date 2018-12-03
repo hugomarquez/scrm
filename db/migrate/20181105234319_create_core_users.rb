@@ -2,7 +2,6 @@ class CreateCoreUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :core_users do |t|
       t.string      :slug,        unique: true
-      t.string      :theme
       t.integer     :role,        default: 0, null: false
       t.boolean     :can_export,  default: false, null: false
       t.string      :username
