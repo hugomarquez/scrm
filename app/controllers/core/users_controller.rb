@@ -67,7 +67,7 @@ class Core::UsersController < ApplicationController
 
   def user_params
     params.require(:core_user).permit(
-      :organization, :username, :nickname, :company,
+      :username, :nickname, :company,
       :department, :division, :start_of_day, :end_of_day,
       :email, :password, :role_id,
 

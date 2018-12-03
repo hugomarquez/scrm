@@ -4,9 +4,6 @@ es:
       core/note:
         one: "Nota"
         other: "Notas"
-      core/organization:
-        one: "Organización"
-        other: "Organizaciones"
       core/person:
         one: "Persona"
         other: "Personas"
@@ -36,10 +33,6 @@ es:
         related_to: "Relacionado a"
         created_by: "Creado por"
         private: "Privado"
-      core/organization:
-        name: "Nombre de Compañía"
-        phone: "Teléfono"
-        owner: "Cuenta"
       core/person:
         title: "Título"
         first_name: "Nombre"

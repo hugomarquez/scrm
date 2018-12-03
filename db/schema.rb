@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
     t.index ["noteable_type", "noteable_id"], name: "index_core_notes_on_noteable_type_and_noteable_id"
   end
 
-  create_table "core_organizations", force: :cascade do |t|
-    t.string "slug"
-    t.string "name"
-    t.string "phone"
-    t.integer "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_core_organizations_on_owner_id"
-  end
-
   create_table "core_people", force: :cascade do |t|
     t.string "slug"
     t.string "title"
@@ -98,7 +88,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
 
   create_table "core_users", force: :cascade do |t|
     t.string "slug"
-    t.integer "organization_id"
+    t.string "theme"
     t.integer "role", default: 0, null: false
     t.boolean "can_export", default: false, null: false
     t.string "username"
@@ -138,7 +128,6 @@ ActiveRecord::Schema.define(version: 2018_11_07_213112) do
     t.index ["invitations_count"], name: "index_core_users_on_invitations_count"
     t.index ["invited_by_id"], name: "index_core_users_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_core_users_on_invited_by_type_and_invited_by_id"
-    t.index ["organization_id"], name: "index_core_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_core_users_on_reset_password_token", unique: true
   end
 
