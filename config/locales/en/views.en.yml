@@ -23,9 +23,11 @@ en:
     core/dashboard:
       charts:
         deals_by_stage:
-          title: "Deals by stage"
+          title: "Deals by Stage"
         amount_expected:
-          title: "Deal amount vs expected revenue"
+          title: "Deal Amount vs Expected Revenue"
+        funnel:
+          title: "Stage Funnel"
       calendar:
         title: "Calendar"
     core/notes:
@@ -116,6 +118,7 @@ en:
         deals: "Deals"
         users: "Users"
     shared:
+      settings: "Settings"
       brand: "SCRM"
       save: "Save"
       cancel: "Cancel"

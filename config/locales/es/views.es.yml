@@ -23,9 +23,11 @@ es:
     core/dashboard:
       charts:
         deals_by_stage:
-          title: "Oportunidades por etapas"
+          title: "Oportunidades por Etapas"
         amount_expected:
           title: "Importe de la oferta frente a los ingresos esperados"
+        funnel:
+          title: "Embudo de Oportunidades"
       calendar:
         title: "Calendario"
     core/notes:
@@ -116,6 +118,7 @@ es:
         deals: "Oportunidades"
         users: "Usuarios"
     shared:
+      settings: "Ajustes"
       brand: "SCRM"
       save: "Guardar"
       cancel: "Cancelar"

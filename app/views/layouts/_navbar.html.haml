@@ -10,7 +10,21 @@
         = link_to t('views.shared.brand'), core_root_path, class:'navbar-brand'
       -else
         = link_to t('views.shared.brand'), home_path, class:'navbar-brand'
-    #navbar.navbar-collapse.collapse
+    #navbar.navbar-collapse
+      - if current_core_user
+        %ul.nav.navbar-nav.hidden.visible-xs
+          %li{class: "#{controller.action_name == 'dashboard' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.dashboard'), core_root_path
+          %li{class: "#{controller.controller_name == 'accounts' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.accounts'), crm_accounts_path
+          %li{class: "#{controller.controller_name == 'contacts' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.contacts'), crm_contacts_path
+          %li{class: "#{controller.controller_name == 'leads' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.leads'), crm_leads_path
+          %li{class: "#{controller.controller_name == 'deals' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.deals'), crm_deals_path
+          %li{class: "#{controller.action_name == 'calendar' ? 'active' : ''}"}
+            = link_to t('views.sidebar.nav.calendar'), core_calendar_path
       %ul.nav.navbar-nav.navbar-right
         - if current_core_user
           %li.dropdown

@@ -6,7 +6,7 @@
   .card-header {
     position: relative;
     display: block;
-    padding: 26px 30px 10px 30px;
+    padding: 20px 30px 10px 30px;
     border-radius: 2px 2px 0 0;
   }
   .card-actions {
@@ -25,11 +25,65 @@
         padding-top: 5px;
       }
     }
+    > a.btn {
+      margin-top: 5px;
+      margin-right: 10px;
+    }
   }
   .card-block {
-    padding: 0px 30px 26px 30px;
+    padding: 30px 30px 26px 30px;
   }
 }
+
 #dashboard .card {
-  min-height: 500px;
+  min-height: 550px;
+}
+
+#account-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $flat-wisteria;
+  }
+}
+
+#contact-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $flat-alizarin;
+  }
+}
+
+#lead-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $flat-orange;
+  }
+}
+
+#deal-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $flat-nephritis;
+  }
+}
+
+#task-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $mat-blue-gray;
+  }
+}
+
+#note-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $mat-cyan;
+  }
+}
+
+#calendar-card {
+  .card-header {
+    color: $mat-white;
+    background-color: $mat-deep-orange;
+  }
 }
