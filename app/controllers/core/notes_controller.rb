@@ -1,11 +1,13 @@
 class Core::NotesController < ApplicationController
   before_action :set_note, only:[:edit, :show, :update, :destroy]
 
+  # GET /notes/new
   def new
     @note = Core::Note.new(created_by: current_core_user)
     authorize @note
   end
 
+  # GET /notes/:id/edit
   def edit
     authorize @note
     if @note.noteable
@@ -17,10 +19,12 @@ class Core::NotesController < ApplicationController
     end
   end
 
+  # GET /notes/:id
   def show
     authorize @note
   end
 
+  # POST /notes
   def create
     @note = Core::Note.new(params_without_virtual_attributes)
     @note.created_by = current_core_user
@@ -35,6 +39,8 @@ class Core::NotesController < ApplicationController
 
   end
 
+  # PATCH /notes/:id
+  # PUT /notes/:id
   def update
     authorize @note
     @note.attributes = params_without_virtual_attributes
@@ -47,6 +53,7 @@ class Core::NotesController < ApplicationController
     end
   end
 
+  # DELETE /projects/:id
   def destroy
     authorize @note
     if @note.destroy

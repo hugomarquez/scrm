@@ -1,6 +1,6 @@
 class Core::UsersController < ApplicationController
   before_action :set_user, only:[:edit, :show, :update, :send_invite]
-
+  # GET /users
   def index
     respond_to do |format|
       format.html
@@ -15,26 +15,31 @@ class Core::UsersController < ApplicationController
     end
   end
 
+  # GET /users/new
   def new
     @user = Core::User.new
     @user.build_person
     authorize @user
   end
 
+  # GET /users/:id/edit
   def edit
     authorize @user
   end
 
+  # GET /users/:id/
   def show
     authorize @user
     redirect_to core_edit_user_path(@user) if @user.person == nil
   end
 
+  # GET /users/:id/send_invite
   def send_invite
     @user.invite!(current_core_user)
     redirect_to core_user_path(@user)
   end
 
+  # POST /users
   def create
     @user = Core::User.new(user_params)
     authorize @user
@@ -51,6 +56,8 @@ class Core::UsersController < ApplicationController
     end
   end
 
+  # PATCH /users/:id
+  # PUT /users/:id
   def update
     authorize @user
     if @user.update_attributes(user_params)

@@ -1,6 +1,7 @@
 class Core::TasksController < ApplicationController
   before_action :set_task, only:[:edit, :show, :update, :destroy]
 
+  # GET /tasks
   def index
     if current_core_user
       @tasks = Core::Task.where(assigned_to: current_core_user).page(params[:task_page]).per(5)
@@ -9,6 +10,7 @@ class Core::TasksController < ApplicationController
     end
   end
 
+  # GET /tasks/new
   def new
     @task = Core::Task.new
     authorize @task
@@ -16,6 +18,7 @@ class Core::TasksController < ApplicationController
     @task.assigned_to_name = current_core_user.person.full_name
   end
 
+  # GET /tasks/:id/edit
   def edit
     authorize @task
     @task.assigned_to_name = @task.assigned_to.person.full_name if @task.assigned_to
@@ -28,6 +31,7 @@ class Core::TasksController < ApplicationController
     end
   end
 
+  # POST /tasks
   def create
     @task = Core::Task.new(params_without_virtual_attributes)
     authorize @task
@@ -49,6 +53,8 @@ class Core::TasksController < ApplicationController
     end
   end
 
+  # PATCH /tasks/:id
+  # PUT /tasks/:id
   def update
     authorize @task
     @task.attributes = params_without_virtual_attributes
@@ -70,6 +76,7 @@ class Core::TasksController < ApplicationController
     end
   end
 
+  # DELETE /projects/:id
   def destroy
     authorize @task
     if @task.destroy
