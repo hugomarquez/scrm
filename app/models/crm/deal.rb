@@ -59,6 +59,10 @@ class Crm::Deal < ApplicationRecord
     end
   end
 
+  def self.funnel_chart
+    @sql = Crm::Deal.select("stage, sum(amount) as amount, count(stage) as total_stage").group(:stage)
+  end
+
   private
   def stage_probability
     case self.stage
