@@ -7,6 +7,7 @@ class Core::UserDatatable < Core::Datatable
       Core::Person.first_name
       Core::Person.last_name
       Core::User.email
+      Core::Person.phone
     )
   end
 
@@ -16,15 +17,17 @@ class Core::UserDatatable < Core::Datatable
       Core::Person.first_name
       Core::Person.last_name
       Core::User.email
+      Core::Person.phone
     )
   end
 
   def data
     records.map do |record|
       [
-        link_to(record.username, record),
+        record.username,
         link_to(record.person.full_name, record),
         link_to(record.email, record),
+        record.person.phone
       ]
     end
   end

@@ -1,30 +1,7 @@
 = form_for @user, html:{class:'form-horizontal'} do |f|
+  = f.fields_for :person do |person|
+    = render 'core/shared/personable_fields', f: person
   .row
-    = f.fields_for :person, (f.object.build_person if f.object.person.nil?) do |p|
-      .col-sm-6
-        = form_group_for p, :first_name do
-          .col-sm-8
-            = p.text_field :first_name, class: 'form-control'
-      .col-sm-6
-        = form_group_for p, :last_name do
-          .col-sm-8
-            = p.text_field :last_name, class: 'form-control'
-      .col-sm-6
-        = form_group_for p, :title do
-          .col-sm-8
-            = p.text_field :title, class: 'form-control'
-      .col-sm-6
-        = form_group_for p, :phone do
-          .col-sm-8
-            = p.text_field :phone, class: 'form-control'
-      .col-sm-6
-        = form_group_for p, :extension do
-          .col-sm-8
-            = p.text_field :extension, class: 'form-control'
-      .col-sm-6
-        = form_group_for p, :mobile do
-          .col-sm-8
-            = p.text_field :mobile, class: 'form-control'
     .col-sm-6
       = form_group_for f, :username do
         .col-sm-8
