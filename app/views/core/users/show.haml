@@ -33,15 +33,40 @@
       %tr
         %th=t('activerecord.attributes.core/user.division')
         %td= @user.division
-        %th
-        %td
+        %th=t('activerecord.attributes.core/person.birthdate')
+        %td= @user.person.birthdate
       %tr
         %th=t('activerecord.attributes.core/user.start_of_day')
         %td= @user.start_of_day
         %th=t('activerecord.attributes.core/user.end_of_day')
         %td= @user.end_of_day
       %tr
-        %th=t('activerecord.attributes.core/person.birthdate')
-        %td= @user.person.birthdate
+        %th=t('activerecord.attributes.core/user.sign_in_count')
+        %td= @user.sign_in_count
         %th
         %td
+      %tr
+        %th=t('activerecord.attributes.core/user.current_sign_in_at')
+        %td= l(@user.current_sign_in_at, format: :short) if @user.current_sign_in_at
+        %th=t('activerecord.attributes.core/user.last_sign_in_at')
+        %td= l(@user.last_sign_in_at, format: :short) if @user.last_sign_in_at
+      %tr
+        %th=t('activerecord.attributes.core/user.current_sign_in_ip')
+        %td= @user.current_sign_in_ip
+        %th=t('activerecord.attributes.core/user.last_sign_in_ip')
+        %td= @user.last_sign_in_ip
+      %tr
+        %th=t('activerecord.attributes.core/user.confirmed_at')
+        %td= l(@user.confirmed_at, format: :short) if @user.confirmed_at
+        %th=t('activerecord.attributes.core/user.confirmation_sent_at')
+        %td= @user.confirmation_sent_at
+      %tr
+        %th=t('activerecord.attributes.core/user.unconfirmed_email')
+        %td= @user.unconfirmed_email
+        %th=t('activerecord.attributes.core/user.invitation_limit')
+        %td= @user.invitation_limit
+      %tr
+        %th=t('activerecord.attributes.core/user.invitation_created_at')
+        %td= l(@user.invitation_created_at, format: :short) if @user.invitation_created_at
+        %th=t('activerecord.attributes.core/user.invitation_sent_at')
+        %td= l(@user.invitation_sent_at, format: :short) if @user.invitation_sent_at
