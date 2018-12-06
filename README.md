@@ -7,6 +7,11 @@
 (Ruby on Rails and other gem dependencies will be installed automatically by Bundler.)
 
 ## Installation
+		cd scrm
+		bundle
+		rake db:migrate
+		rake db:seed
+		rails server
 ## License
 
 Simple CRM
