@@ -1,22 +1,23 @@
 - navbar navbar: false
 - sidebar sidebar: false
-.col-sm-8
-  .card
-    .card-header
-      %p.lead= t('devise.invitations.edit.header')
-    .card-block
-      = form_for resource,as: resource_name, url:invitation_path(resource_name), html:{method: :put} do |f|
-        = f.hidden_field :invitation_token
-        - if f.object.class.require_password_on_accepting
-          = form_group_for f, :password, label: false do
-            .input-group
-              = f.password_field :password, class: 'form-control', placeholder: t('activerecord.attributes.core/user.password'), required: true
-              %span.input-group-addon
-                %i.fa.fa-key
-          = form_group_for f, :password_confirmation, label: false do
-            .input-group
-              = f.password_field :password_confirmation, class: 'form-control', placeholder: t('activerecord.attributes.core/user.password_confirmation'), required:true
-              %span.input-group-addon
-                %i.fa.fa-key
-        .row.form-group.text-center
-          = f.submit t("devise.invitations.edit.submit_button"), class: 'btn btn-sm btn-primary'
+#devise-invitations
+  .col-sm-8.col-sm-offset-1
+    .card
+      .card-header
+        %p.lead= t('devise.invitations.edit.header')
+      .card-block
+        = form_for resource,as: resource_name, url:invitation_path(resource_name), html:{method: :put} do |f|
+          = f.hidden_field :invitation_token
+          - if f.object.class.require_password_on_accepting
+            = form_group_for f, :password, label: false do
+              .input-group
+                = f.password_field :password, class: 'form-control', placeholder: t('activerecord.attributes.core/user.password'), required: true
+                %span.input-group-addon
+                  %i.fa.fa-key
+            = form_group_for f, :password_confirmation, label: false do
+              .input-group
+                = f.password_field :password_confirmation, class: 'form-control', placeholder: t('activerecord.attributes.core/user.password_confirmation'), required:true
+                %span.input-group-addon
+                  %i.fa.fa-key
+          .form-group
+            = f.submit t("devise.invitations.edit.submit_button"), class: 'btn btn-primary btn-block btn-lg'

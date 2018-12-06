@@ -1,0 +1,162 @@
+@import "colors";
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         $mat-blue;
+$brand-success:         $mat-green;
+$brand-info:            $mat-cyan;
+$brand-warning:         $mat-orange;
+$brand-danger:          $mat-red;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+//** Background color for `<body>`.
+$body-bg:               $gray-lighter;
+//** Global text color on `<body>`.
+$text-color:            $mat-black;
+
+//** Global textual link color.
+$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 25%);
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+$font-size-base:          16px;
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.25; // 20/16
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    $mat-white;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+$btn-font-weight:                normal;
+$btn-default-color:              $mat-black;
+$btn-default-bg:                 $mat-white;
+$btn-default-border:             #ccc;
+$btn-primary-color:              $mat-white;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $brand-primary;
+$btn-success-color:              $mat-white;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $brand-success;
+$btn-info-color:                 $mat-white;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $brand-info;
+$btn-warning-color:              $mat-white;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $brand-warning;
+$btn-danger-color:               $mat-white;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $brand-danger;
+
+//== Forms
+//
+//##
+//** `<input>` background color
+$input-bg:                       $mat-white;
+//** `<input disabled>` background color
+$input-bg-disabled:              $gray-lighter;
+//** Text color for `<input>`s
+$input-color:                    $mat-black;
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            0px;
+//** Large `.form-control` border radius
+$input-border-radius-large:      0px;
+//** Small `.form-control` border radius
+$input-border-radius-small:      0px;
+//** Border color for inputs on focus
+$input-border-focus:             $brand-primary;
+//** Placeholder text color
+$input-color-placeholder:        $gray-light;
+//** `.form-group` margin
+$form-group-margin-bottom:       25px;
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+//** Background for the dropdown menu.
+$dropdown-bg:                    $mat-white;
+//** Dropdown link text color.
+$dropdown-link-color:            $mat-black;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      darken($mat-black, 5%);
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         $gray-lighter;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    70px;
+$navbar-default-color:             $mat-white;
+$navbar-default-bg:                $mat-light-blue;
+$navbar-default-border:            transparent;
+// Navbar links
+$navbar-default-link-color:                $navbar-default-color;
+$navbar-default-link-hover-color:          $navbar-default-color;
+$navbar-default-link-active-color:         $navbar-default-color;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 3%);
+// Navbar brand label
+$navbar-default-brand-hover-color:         $navbar-default-color;
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           transparent;
+$navbar-default-toggle-icon-bar-bg:        $mat-white;
+$navbar-default-toggle-border-color:       transparent;
+
+//== Navs
+//
+//##
+//=== Shared nav styles
+$nav-link-hover-bg:                         transparent;
+
+//== Pagination
+//
+//##
+$pagination-bg:                        $mat-white;
+$pagination-active-color:              $mat-white;
+$pagination-disabled-bg:               $mat-white;
+
+//== Pager
+//
+//##
+$pager-border-radius:                  0px;
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+$state-danger-text:              $brand-danger;
+$state-danger-bg:                $state-danger-text;
+$state-danger-border:            darken($state-danger-bg, 5%);
+
+//== Modals
+//
+//##
+//** Background color of modal content area
+$modal-content-bg:                             $mat-white;

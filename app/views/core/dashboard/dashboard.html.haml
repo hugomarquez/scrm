@@ -2,31 +2,32 @@
   = javascript_include_tag 'lib/chart.min.js'
   = javascript_include_tag 'lib/chart.funnel.min.js'
   = javascript_include_tag 'core/dashboard'
-.row
-  .col-md-6
-    = render 'public_activity/layout'
-  .col-md-6
-    .card
-      .card-header
-        %p.lead= t("views.core/dashboard.charts.deals_by_stage.title")
-      .card-block
-        - if !@deals_by_stage.empty?
-          %canvas#dealsByStages{width:100, height:80, data:{deals:@deals_by_stage.to_json}}
-        - else
-          %p= t("views.shared.no_data")
-.row
-  .col-md-6
-    .card
-      .card-header
-        %p.lead= t("views.core/dashboard.charts.amount_expected.title")
-      .card-block
-        - if @deal_amount_expected
-          %canvas#dealsAmountExpected{width:100, height:80, data:{deals:@deal_amount_expected.to_json}}
-        - else
-          %p= t("views.shared.no_data")
-  .col-md-6
-    .card
-      .card-header
-        %p.lead= t("views.core/dashboard.charts.funnel.title")
-      .card-block
-        %canvas#funnel{width:100, height:80}
+#dashboard
+  .row
+    .col-md-6
+      = render 'public_activity/layout'
+    .col-md-6
+      .card
+        .card-header
+          %p.lead= t("views.core/dashboard.charts.deals_by_stage.title")
+        .card-block
+          - if !@deals_by_stage.empty?
+            %canvas#dealsByStages{width:100, height:80, data:{deals:@deals_by_stage.to_json}}
+          - else
+            %p= t("views.shared.no_data")
+  .row
+    .col-md-6
+      .card
+        .card-header
+          %p.lead= t("views.core/dashboard.charts.amount_expected.title")
+        .card-block
+          - if @deal_amount_expected
+            %canvas#dealsAmountExpected{width:100, height:80, data:{deals:@deal_amount_expected.to_json}}
+          - else
+            %p= t("views.shared.no_data")
+    .col-md-6
+      .card
+        .card-header
+          %p.lead= t("views.core/dashboard.charts.funnel.title")
+        .card-block
+          %canvas#funnel{width:100, height:80}
