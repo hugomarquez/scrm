@@ -68,19 +68,24 @@ var dashboard = (function(){
   }
 
   function funnelChart() {
-    let ctx = document.getElementById("funnel").getContext("2d");
+    var deals = $("#dealsFunnel").data("deals");
+    let labels = [];
+    let data = [];
+    let ctx = document.getElementById("dealsFunnel").getContext("2d");
+
+    for(let d = 0; d < deals.length; d++) {
+      labels.push(deals[d].stage);
+      data.push(deals[d].total_stage)
+    }
+    console.log(deals);
     var config = {
         type: 'funnel',
         data: {
             datasets: [{
-                data: [10, 35, 90],
+                data: data,
                 backgroundColor: colors.getMaterialColors(),
             }],
-            labels: [
-                "Red",
-                "Blue",
-                "Yellow"
-            ]
+            labels: labels
         },
         options: {
             sort: 'desc',

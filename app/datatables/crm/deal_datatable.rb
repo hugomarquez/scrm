@@ -5,6 +5,8 @@ class Crm::DealDatatable < Core::Datatable
     @sortable_columns ||= %w(
       Crm::Deal.number
       Crm::Deal.name
+      Crm::Deal.stage
+      Crm::Deal.amount
     )
   end
 
@@ -12,6 +14,8 @@ class Crm::DealDatatable < Core::Datatable
     @searchable_columns ||= %w(
       Crm::Deal.number
       Crm::Deal.name
+      Crm::Deal.stage
+      Crm::Deal.amount
     )
   end
 
@@ -20,6 +24,8 @@ class Crm::DealDatatable < Core::Datatable
       [
         link_to(record.number, record),
         link_to(record.name, record),
+        I18n.t("activerecord.attributes.crm/deal.stages_options.#{record.stage}"),
+        number_to_currency(record.amount)
       ]
     end
   end

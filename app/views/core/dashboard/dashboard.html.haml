@@ -30,4 +30,4 @@
         .card-header
           %p.lead= t("views.core/dashboard.charts.funnel.title")
         .card-block
-          %canvas#funnel{width:100, height:80}
+          %canvas#dealsFunnel{width:100, height:80, data:{deals:@deal_funnel.to_json}}

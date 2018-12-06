@@ -28,6 +28,8 @@ class Crm::LeadsController < ApplicationController
   end
 
   def convert
+    @lead.status = :working
+    @lead.save
     @account = Crm::Account.new(
       name: @lead.company,
       industry: @lead.industry,
@@ -50,6 +52,7 @@ class Crm::LeadsController < ApplicationController
       created_by: current_core_user
     )
     if @account.valid? && @deal.valid?
+      @deal.tasks.new(assigned_to: current_core_user, subject:"#{@deal.number} - #{@deal.name}", priority: :normal)
       @account.save
       @deal.save
       flash[:success] = t('controllers.crm/leads.convert.success')

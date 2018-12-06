@@ -8,6 +8,7 @@ class Crm::LeadDatatable < Core::Datatable
       Core::Person.first_name
       Core::Person.last_name
       Core::Person.email
+      Crm::Lead.status
     )
   end
 
@@ -18,6 +19,7 @@ class Crm::LeadDatatable < Core::Datatable
       Core::Person.first_name
       Core::Person.last_name
       Core::Person.email
+      Crm::Lead.status
     )
   end
 
@@ -26,8 +28,9 @@ class Crm::LeadDatatable < Core::Datatable
       [
         link_to(record.number, record),
         link_to(record.company, record),
-        link_to(record.person.first_name, record),
-        link_to(record.person.email, record)
+        record.person.first_name,
+        record.person.email,
+        I18n.t("activerecord.attributes.crm/lead.statuses_options.#{record.status}"),
       ]
     end
   end

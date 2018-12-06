@@ -8,7 +8,6 @@ class Crm::AccountDatatable < Core::Datatable
       Crm::Account.email
       Crm::Account.phone
       Crm::Account.website
-      Core::Person.first_name
     )
   end
 
@@ -19,8 +18,6 @@ class Crm::AccountDatatable < Core::Datatable
       Crm::Account.email
       Crm::Account.phone
       Crm::Account.website
-      Core::Person.first_name
-      Core::Person.last_name
     )
   end
 
@@ -32,13 +29,12 @@ class Crm::AccountDatatable < Core::Datatable
         mail_to(record.email),
         record.phone,
         link_to(record.website, record.website, target: :_blank),
-        link_to(record.created_by.person.full_name, record.created_by),
       ]
     end
   end
 
   def get_raw_records
-    Crm::Account.includes(created_by: :person).references(:person)
+    Crm::Account
   end
 
 end

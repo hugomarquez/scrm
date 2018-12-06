@@ -60,7 +60,15 @@ class Crm::Deal < ApplicationRecord
   end
 
   def self.funnel_chart
-    @sql = Crm::Deal.select("stage, sum(amount) as amount, count(stage) as total_stage").group(:stage)
+    @sql = Crm::Deal.select("stage, count(stage) as total_stage").group(:stage)
+    @deals = {}
+    if @sql.any?
+      @deals = @sql.map do |d| {
+          stage: I18n.t("activerecord.attributes.crm/deal.stages_options.#{d.stage}"),
+          total_stage: d.total_stage,
+        }
+      end
+    end
   end
 
   private

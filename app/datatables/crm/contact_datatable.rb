@@ -8,7 +8,6 @@ class Crm::ContactDatatable < Core::Datatable
       Crm::Account.name
       Core::Person.email
       Crm::Contact.assistant
-      Core::Person.last_name
     )
   end
 
@@ -19,7 +18,6 @@ class Crm::ContactDatatable < Core::Datatable
       Crm::Account.name
       Core::Person.email
       Core::Person.assistant
-      Core::Person.last_name
     )
   end
 
@@ -31,7 +29,6 @@ class Crm::ContactDatatable < Core::Datatable
         account?(record),
         mail_to(record.person.email),
         record.person.assistant,
-        link_to(record.created_by.person.full_name, record.created_by),
       ]
     end
   end
