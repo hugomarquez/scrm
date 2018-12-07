@@ -1,7 +1,42 @@
 = form_for @user, html:{class:'form-horizontal'} do |f|
-  = f.fields_for :person do |person|
-    = render 'core/shared/personable_fields', f: person
   .row
+    = f.fields_for :person do |p|
+      .col-sm-6
+        = form_group_for p, :first_name do
+          .col-sm-8
+            = p.text_field :first_name, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :last_name do
+          .col-sm-8
+            = p.text_field :last_name, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :title do
+          .col-sm-8
+            = p.text_field :title, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :mobile do
+          .col-sm-8
+            = p.text_field :mobile, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :phone do
+          .col-sm-8
+            = p.text_field :phone, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :extension do
+          .col-sm-8
+            = p.text_field :extension, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :assistant do
+          .col-sm-8
+            = p.text_field :assistant, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :asst_phone do
+          .col-sm-8
+            = p.text_field :asst_phone, class: 'form-control'
+      .col-sm-6
+        = form_group_for p, :birthdate do
+          .col-sm-8
+            = p.date_field :birthdate, class: 'form-control'
     .col-sm-6
       = form_group_for f, :username do
         .col-sm-8
