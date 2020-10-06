@@ -6,6 +6,9 @@
 ## System Requirements
 (Ruby on Rails and other gem dependencies will be installed automatically by Bundler.)
 
+## Demo 
+[Open Source Simple CRM Demo]: https://youtu.be/_pUIFFlLjx4
+
 ## Installation
 		cd scrm
 		bundle
