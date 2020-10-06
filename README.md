@@ -7,7 +7,7 @@
 (Ruby on Rails and other gem dependencies will be installed automatically by Bundler.)
 
 ## Demo 
-[Youtube Video][youtube-demo]
+### Open Source Simple CRM Demo [Video][youtube-demo].
 [youtube-demo]: https://youtu.be/_pUIFFlLjx4
 
 ## Installation
